@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sing_up.SignUp">
+
+
+    <TextView
+        android:id="@+id/EmailText"
+        android:layout_width="98dp"
+        android:layout_height="41dp"
+        android:gravity="center"
+        android:text="Email :"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="211dp"
+        android:layout_height="54dp"
+        android:hint="Enter email"
+        android:inputType="textEmailAddress"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <TextView
+        android:id="@+id/NameText"
+        android:layout_width="98dp"
+        android:layout_height="41dp"
+        android:gravity="center"
+        android:text="Name :"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="184dp" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="211dp"
+        android:layout_height="54dp"
+        android:hint="Enter name"
+        android:inputType="textPersonName"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="184dp" />
+
+    <TextView
+        android:id="@+id/LastNameText"
+        android:layout_width="98dp"
+        android:layout_height="41dp"
+        android:gravity="center"
+        android:text="Last name :"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="264dp" />
+
+    <EditText
+        android:id="@+id/LastName"
+        android:layout_width="211dp"
+        android:layout_height="54dp"
+        android:hint="Enter Last Name"
+        android:inputType="textPersonName"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="264dp" />
+
+    <TextView
+        android:id="@+id/BirthdayText"
+        android:layout_width="98dp"
+        android:layout_height="41dp"
+        android:gravity="center"
+        android:text="Birthday :"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="349dp" />
+
+    <EditText
+        android:id="@+id/Birthday"
+        android:layout_width="211dp"
+        android:layout_height="54dp"
+        android:hint="Enter Birthday"
+        android:inputType="date"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="349dp" />
+
+
+
+    <Button
+        android:id="@+id/AdressPage"
+        android:layout_width="142dp"
+        android:layout_height="48dp"
+        android:text="Next"
+        android:gravity="center"
+        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="599dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
