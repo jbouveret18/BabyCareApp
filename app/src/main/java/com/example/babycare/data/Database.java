@@ -15,5 +15,9 @@ public class Database extends AppCompatActivity {
         User user = new User(key, firstName,lastName,email,birthday);
         databaseReference.child("users").child(String.valueOf(key)).setValue(user);
     }
+    public void writeUserAddress(User user,String region, String country,String street, int postalCode){
+        Address address = new Address(user.key, user.firstName, user.lastName, user.email, user.birthday,region,country,street,postalCode);
+        databaseReference.child("address").child(String.valueOf(user.key)).setValue(address);
+    }
 
 }
