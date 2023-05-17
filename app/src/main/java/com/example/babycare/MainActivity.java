@@ -16,9 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button button = findViewById(R.id.SignUp);
         Button googleSignInButton = findViewById(R.id.Google);
-        googleSignInButton.setOnClickListener(v -> setIntent(intent));
-        startActivity(intent);
+        googleSignInButton.setOnClickListener(v -> launchControllerActivity());
         button.setOnClickListener(v -> setContentView(R.layout.sign_up));
     }
-    Intent intent = new Intent(this, SignInActivity.class);
+    private void launchControllerActivity() {
+        Intent intent = new Intent(this, SignInActivity.class);
+        startActivity(intent);
+    }
 }
