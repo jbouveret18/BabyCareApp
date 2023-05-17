@@ -11,7 +11,7 @@
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:gravity="center"
-        android:text="Email :"
+        android:text="@string/email"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="109dp" />
@@ -20,8 +20,10 @@
         android:id="@+id/Email"
         android:layout_width="211dp"
         android:layout_height="54dp"
-        android:hint="Enter email"
+        android:autofillHints=""
+        android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
+        android:textColorHint="#8D6E63"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="138dp"
         tools:layout_editor_absoluteY="109dp" />
@@ -31,7 +33,7 @@
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:gravity="center"
-        android:text="Name :"
+        android:text="@string/name"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="14dp"
         tools:layout_editor_absoluteY="184dp" />
@@ -40,8 +42,10 @@
         android:id="@+id/Name"
         android:layout_width="211dp"
         android:layout_height="54dp"
-        android:hint="Enter name"
+        android:autofillHints=""
+        android:hint="@string/enter_name"
         android:inputType="textPersonName"
+        android:textColorHint="#8D6E63"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="138dp"
         tools:layout_editor_absoluteY="184dp" />
@@ -51,8 +55,8 @@
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:gravity="center"
-        android:text="Last name :"
-        tools:ignore="MissingConstraints"
+        android:text="@string/last_name"
+        tools:ignore="MissingConstraints,TextSizeCheck"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="264dp" />
 
@@ -60,8 +64,10 @@
         android:id="@+id/LastName"
         android:layout_width="211dp"
         android:layout_height="54dp"
-        android:hint="Enter Last Name"
+        android:autofillHints=""
+        android:hint="@string/enter_last_name"
         android:inputType="textPersonName"
+        android:textColorHint="#8D6E63"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="264dp" />
@@ -71,7 +77,7 @@
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:gravity="center"
-        android:text="Birthday :"
+        android:text="@string/birthday"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="349dp" />
@@ -81,8 +87,10 @@
         android:id="@+id/Birthday"
         android:layout_width="211dp"
         android:layout_height="54dp"
-        android:hint="Enter Birthday"
+        android:autofillHints=""
+        android:hint="@string/enter_birthday"
         android:inputType="date"
+        android:textColorHint="#8D6E63"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="349dp" />
@@ -92,7 +100,7 @@
         android:layout_width="142dp"
         android:layout_height="48dp"
         android:gravity="center"
-        android:text="Next"
+        android:text="@string/next"
         tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
         tools:layout_editor_absoluteX="231dp"
         tools:layout_editor_absoluteY="580dp" />
