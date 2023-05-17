@@ -1,4 +1,4 @@
-package com.example.babycare.SignInGoogleOauth2;
+package com.example.babycare.sing_up;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,13 +21,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class SignInActivity  extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
     private GoogleSignInClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
