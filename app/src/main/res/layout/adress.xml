@@ -26,11 +26,15 @@
         android:id="@+id/CountryText"
         android:layout_width="98dp"
         android:layout_height="41dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginBottom="25dp"
         android:gravity="center"
         android:text="@string/country_of_residence"
-        tools:ignore="MissingConstraints,TextSizeCheck"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="107dp" />
+        app:layout_constraintBottom_toTopOf="@+id/RegionText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <AutoCompleteTextView
         android:id="@+id/countries_list"
@@ -59,11 +63,14 @@
         android:id="@+id/RegionText"
         android:layout_width="98dp"
         android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="49dp"
         android:gravity="center"
         android:text="@string/region"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="173dp" />
+        app:layout_constraintBottom_toTopOf="@+id/StreetText"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
 
     <AutoCompleteTextView
         android:id="@+id/region_list"
@@ -72,29 +79,31 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="61dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="40dp"
         android:dropDownHeight="100dp"
         android:ems="10"
         android:hint="@string/region_list"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/Street"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/RegionText"
         tools:ignore="MissingConstraints">
 
         <requestFocus />
     </AutoCompleteTextView>
 
-
     <TextView
         android:id="@+id/StreetText"
         android:layout_width="98dp"
         android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="41dp"
         android:gravity="center"
         android:text="@string/street"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="263dp" />
+        app:layout_constraintBottom_toTopOf="@+id/PostalCodeText"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/Street"
@@ -116,11 +125,13 @@
         android:id="@+id/PostalCodeText"
         android:layout_width="98dp"
         android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="345dp"
         android:gravity="center"
         android:text="@string/postal_code"
-        tools:ignore="MissingConstraints,TextSizeCheck"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="345dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <EditText
         android:id="@+id/PostalCode"
