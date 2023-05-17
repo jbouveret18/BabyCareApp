@@ -2,10 +2,10 @@ package com.example.babycare.SignInGoogleOauth2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.HomePage;
@@ -18,9 +18,8 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-
-import java.util.Objects;
 
 public class SignInActivity  extends AppCompatActivity {
     private GoogleSignInClient client;
@@ -37,30 +36,72 @@ public class SignInActivity  extends AppCompatActivity {
         client = GoogleSignIn.getClient(this, options);
         button.setOnClickListener(v -> {
                 Intent intent = client.getSignInIntent();
-                startActivityForResult(intent,1234);
+                startActivityForResult(intent,RC_SIGN_IN);
         });
     }
+    private static final int RC_SIGN_IN = 1234;
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1234){
+
+        if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
+                // Successfully signed in
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(),null);
-                FirebaseAuth.getInstance().signInWithCredential(credential)
-                        .addOnCompleteListener(task1 -> {
-                            if(task1.isSuccessful()){
-                                Intent intent = new Intent(getApplicationContext(), HomePage.class);
-                                startActivity(intent);
-                            }else {
-                                Toast.makeText(SignInActivity.this, Objects.requireNonNull(task1.getException()).getMessage(),Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
-                throw new RuntimeException(e);
+                // Sign-in failed
+                Log.e("TAG", "Google sign-in failed", e);
             }
         }
     }
+    private void updateUI(FirebaseUser user) {
+        if (user != null) {
+            // User is signed in, update UI accordingly
+            String displayName = user.getDisplayName();
+            String email = user.getEmail();
+
+            // Example: Display user information in TextViews or ImageView
+            TextView displayNameTextView = findViewById(R.id.displayNameTextView);
+            TextView emailTextView = findViewById(R.id.emailTextView);
+
+            displayNameTextView.setText(displayName);
+            emailTextView.setText(email);
+
+            // Example: Navigate to the main screen or perform any other desired actions
+            Intent intent = new Intent(this, HomePage.class);
+            startActivity(intent);
+            finish(); // Optional: Close the current activity to prevent going back to authentication screen
+        } else {
+            // User is signed out, update UI accordingly
+            // Example: Show a sign-in button or display a message
+        }
+    }
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        FirebaseAuth.getInstance().signInWithCredential(credential)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Successfully authenticated with Firebase
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        // You can access the user's information using the 'user' object
+
+                        // Optional: You can perform additional actions after authentication
+                        // For example, update UI, navigate to the main screen, etc.
+
+                        // Example: Update UI after successful authentication
+                        updateUI(user);
+                    } else {
+                        // Authentication failed
+                        Log.e("TAG", "signInWithCredential:failure", task.getException());
+                        Error error = new Error("Connection error");
+                        System.out.println(error);
+                        // Optional: You can handle the failure case as needed
+                        // For example, display an error message, show a toast, etc.
+                    }
+                });
+    }
+
 }
