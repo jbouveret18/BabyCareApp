@@ -84,7 +84,7 @@
         android:ems="10"
         android:hint="@string/region_list"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/Street"
+        app:layout_constraintBottom_toTopOf="@+id/streetInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/RegionText"
@@ -106,7 +106,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/Street"
+        android:id="@+id/streetInput"
         android:layout_width="199dp"
         android:layout_height="48dp"
         android:layout_marginStart="26dp"
@@ -116,7 +116,7 @@
         android:hint="@string/enter_your_street"
         android:inputType="text"
         android:textColorHint="#8D6E63"
-        app:layout_constraintBottom_toTopOf="@+id/PostalCode"
+        app:layout_constraintBottom_toTopOf="@+id/postalCodeInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/StreetText"
         tools:ignore="MissingConstraints" />
@@ -134,7 +134,7 @@
         tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <EditText
-        android:id="@+id/PostalCode"
+        android:id="@+id/postalCodeInput"
         android:layout_width="199dp"
         android:layout_height="48dp"
         android:layout_marginStart="26dp"
@@ -153,14 +153,12 @@
         android:id="@+id/FinishSignUp"
         android:layout_width="142dp"
         android:layout_height="48dp"
-        android:layout_marginStart="231dp"
         android:layout_marginEnd="38dp"
         android:layout_marginBottom="84dp"
         android:gravity="center"
         android:text="@string/finish"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck" />
 
 

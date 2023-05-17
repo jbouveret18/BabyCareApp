@@ -22,7 +22,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/emailInput"
         android:layout_width="211dp"
         android:layout_height="54dp"
         android:layout_marginStart="24dp"
@@ -33,7 +33,7 @@
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
         android:textColorHint="#8D6E63"
-        app:layout_constraintBottom_toTopOf="@+id/Name"
+        app:layout_constraintBottom_toTopOf="@+id/firstNameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/EmailText"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,7 +50,7 @@
         tools:layout_editor_absoluteY="184dp" />
 
     <EditText
-        android:id="@+id/Name"
+        android:id="@+id/firstNameInput"
         android:layout_width="211dp"
         android:layout_height="54dp"
         android:layout_marginStart="26dp"
@@ -60,7 +60,7 @@
         android:hint="@string/enter_name"
         android:inputType="textPersonName"
         android:textColorHint="#8D6E63"
-        app:layout_constraintBottom_toTopOf="@+id/LastName"
+        app:layout_constraintBottom_toTopOf="@+id/lastNameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/NameText"
         tools:ignore="MissingConstraints" />
@@ -78,7 +78,7 @@
         tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <EditText
-        android:id="@+id/LastName"
+        android:id="@+id/lastNameInput"
         android:layout_width="211dp"
         android:layout_height="54dp"
         android:layout_marginStart="17dp"
@@ -88,7 +88,7 @@
         android:hint="@string/enter_last_name"
         android:inputType="textPersonName"
         android:textColorHint="#8D6E63"
-        app:layout_constraintBottom_toTopOf="@+id/Birthday"
+        app:layout_constraintBottom_toTopOf="@+id/birthdayInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/LastNameText"
         tools:ignore="MissingConstraints" />
@@ -107,7 +107,7 @@
 
 
     <EditText
-        android:id="@+id/Birthday"
+        android:id="@+id/birthdayInput"
         android:layout_width="211dp"
         android:layout_height="54dp"
         android:layout_marginStart="17dp"
