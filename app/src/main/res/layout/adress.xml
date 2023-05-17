@@ -153,11 +153,15 @@
         android:id="@+id/FinishSignUp"
         android:layout_width="142dp"
         android:layout_height="48dp"
-        android:text="@string/finish"
+        android:layout_marginStart="231dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="84dp"
         android:gravity="center"
-        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="599dp" />
+        android:text="@string/finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
