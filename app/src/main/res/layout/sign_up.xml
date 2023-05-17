@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,23 +11,33 @@
         android:id="@+id/EmailText"
         android:layout_width="98dp"
         android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginBottom="34dp"
         android:gravity="center"
         android:text="@string/email"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="109dp" />
+        app:layout_constraintBottom_toTopOf="@+id/NameText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/Email"
         android:layout_width="211dp"
         android:layout_height="54dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="21dp"
         android:autofillHints=""
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
         android:textColorHint="#8D6E63"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="109dp" />
+        app:layout_constraintBottom_toTopOf="@+id/Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/EmailText"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/NameText"
@@ -42,67 +53,87 @@
         android:id="@+id/Name"
         android:layout_width="211dp"
         android:layout_height="54dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="26dp"
         android:autofillHints=""
         android:hint="@string/enter_name"
         android:inputType="textPersonName"
         android:textColorHint="#8D6E63"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="184dp" />
+        app:layout_constraintBottom_toTopOf="@+id/LastName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/NameText"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/LastNameText"
         android:layout_width="98dp"
         android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="44dp"
         android:gravity="center"
         android:text="@string/last_name"
-        tools:ignore="MissingConstraints,TextSizeCheck"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintBottom_toTopOf="@+id/BirthdayText"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <EditText
         android:id="@+id/LastName"
         android:layout_width="211dp"
         android:layout_height="54dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="31dp"
         android:autofillHints=""
         android:hint="@string/enter_last_name"
         android:inputType="textPersonName"
         android:textColorHint="#8D6E63"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintBottom_toTopOf="@+id/Birthday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/LastNameText"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/BirthdayText"
         android:layout_width="98dp"
         android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="341dp"
         android:gravity="center"
         android:text="@string/birthday"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="349dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
     <EditText
         android:id="@+id/Birthday"
         android:layout_width="211dp"
         android:layout_height="54dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="177dp"
         android:autofillHints=""
         android:hint="@string/enter_birthday"
         android:inputType="date"
         android:textColorHint="#8D6E63"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="349dp" />
+        app:layout_constraintBottom_toTopOf="@+id/AdressPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BirthdayText"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/AdressPage"
         android:layout_width="142dp"
         android:layout_height="48dp"
+        android:layout_marginStart="231dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="103dp"
         android:gravity="center"
         android:text="@string/next"
-        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="580dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
