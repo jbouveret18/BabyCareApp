@@ -14,13 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.SignUp);
+        Button button = findViewById(R.id.SignUp);
         Button googleSignInButton = findViewById(R.id.Google);
-        googleSignInButton.setOnClickListener(v -> launchControllerActivity());
+        googleSignInButton.setOnClickListener(v -> setIntent(intent));
+        startActivity(intent);
         button.setOnClickListener(v -> setContentView(R.layout.sign_up));
     }
-    private void launchControllerActivity() {
-        Intent intent = new Intent(this, SignInActivity.class);
-        startActivity(intent);
-    }
+    Intent intent = new Intent(this, SignInActivity.class);
 }
