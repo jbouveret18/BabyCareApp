@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,33 +9,48 @@
         android:id="@+id/AdressTitleText"
         android:layout_width="207dp"
         android:layout_height="45dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="46dp"
         android:gravity="center"
-        android:text="Adress"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:text="@string/adress"
+        app:layout_constraintBottom_toTopOf="@+id/countries_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/CountryText"
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:gravity="center"
-        android:text="Country of residence :"
-        tools:ignore="MissingConstraints"
+        android:text="@string/country_of_residence"
+        tools:ignore="MissingConstraints,TextSizeCheck"
         tools:layout_editor_absoluteX="14dp"
         tools:layout_editor_absoluteY="107dp" />
 
     <AutoCompleteTextView
-        android:hint="Country"
         android:id="@+id/countries_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="18dp"
         android:dropDownHeight="100dp"
         android:ems="10"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="107dp">
+        android:hint="@string/country"
+        android:minHeight="48dp"
+        android:textColorHint="#8D6E63"
+        app:layout_constraintBottom_toTopOf="@+id/region_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/CountryText"
+        app:layout_constraintTop_toBottomOf="@+id/AdressTitleText"
+        tools:ignore="MissingConstraints">
 
         <requestFocus />
     </AutoCompleteTextView>
@@ -44,22 +60,28 @@
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:gravity="center"
-        android:text="Region :"
+        android:text="@string/region"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="173dp" />
 
     <AutoCompleteTextView
         android:id="@+id/region_list"
-        android:hint="Region"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="42dp"
         android:dropDownHeight="100dp"
         android:ems="10"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="173dp">
+        android:hint="@string/region_list"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/Street"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/RegionText"
+        tools:ignore="MissingConstraints">
+
         <requestFocus />
     </AutoCompleteTextView>
 
@@ -69,7 +91,7 @@
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:gravity="center"
-        android:text="Street :"
+        android:text="@string/street"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="263dp" />
@@ -77,38 +99,50 @@
     <EditText
         android:id="@+id/Street"
         android:layout_width="199dp"
-        android:layout_height="41dp"
-        android:hint="Enter your street"
+        android:layout_height="48dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="34dp"
+        android:autofillHints=""
+        android:hint="@string/enter_your_street"
         android:inputType="text"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="263dp" />
+        android:textColorHint="#8D6E63"
+        app:layout_constraintBottom_toTopOf="@+id/PostalCode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/StreetText"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/PostalCodeText"
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:gravity="center"
-        android:text="Postal Code :"
-        tools:ignore="MissingConstraints"
+        android:text="@string/postal_code"
+        tools:ignore="MissingConstraints,TextSizeCheck"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="345dp" />
 
     <EditText
         android:id="@+id/PostalCode"
         android:layout_width="199dp"
-        android:layout_height="41dp"
-        android:hint="Enter Postal code"
+        android:layout_height="48dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="206dp"
+        android:autofillHints=""
+        android:hint="@string/enter_postal_code"
         android:inputType="textPostalAddress"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="345dp" />
+        android:textColorHint="#8D6E63"
+        app:layout_constraintBottom_toTopOf="@+id/FinishSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PostalCodeText"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/FinishSignUp"
         android:layout_width="142dp"
         android:layout_height="48dp"
-        android:text="Finish"
+        android:text="@string/finish"
         android:gravity="center"
         tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
         tools:layout_editor_absoluteX="231dp"

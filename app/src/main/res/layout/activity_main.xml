@@ -51,17 +51,17 @@
 
     <Button
         android:id="@+id/Google"
-        android:layout_width="257dp"
-        android:layout_height="66dp"
+        android:layout_width="231dp"
+        android:layout_height="82dp"
         android:contentDescription="@string/app_name"
         android:gravity="center"
         android:text="Sign in with google"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562"
+        app:layout_constraintVertical_bias="0.587"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -73,10 +73,10 @@
         android:text="Sign in with Apple ID"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.672"
+        app:layout_constraintVertical_bias="0.72"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -91,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.817"
+        app:layout_constraintVertical_bias="0.839"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

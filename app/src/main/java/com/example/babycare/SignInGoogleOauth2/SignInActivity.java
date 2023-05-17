@@ -2,11 +2,9 @@ package com.example.babycare.SignInGoogleOauth2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,15 +15,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.util.Objects;
+
 public class SignInActivity  extends AppCompatActivity {
-    private Button button;
     private GoogleSignInClient client;
 
     @Override
@@ -36,14 +33,11 @@ public class SignInActivity  extends AppCompatActivity {
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        button = findViewById(R.id.Google);
+        Button button = findViewById(R.id.Google);
         client = GoogleSignIn.getClient(this, options);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    Intent intent = client.getSignInIntent();
-                    startActivityForResult(intent,1234);
-            }
+        button.setOnClickListener(v -> {
+                Intent intent = client.getSignInIntent();
+                startActivityForResult(intent,1234);
         });
     }
 
@@ -56,15 +50,12 @@ public class SignInActivity  extends AppCompatActivity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(),null);
                 FirebaseAuth.getInstance().signInWithCredential(credential)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    Intent intent = new Intent(getApplicationContext(), HomePage.class);
-                                    startActivity(intent);
-                                }else {
-                                    Toast.makeText(SignInActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                                }
+                        .addOnCompleteListener(task1 -> {
+                            if(task1.isSuccessful()){
+                                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                                startActivity(intent);
+                            }else {
+                                Toast.makeText(SignInActivity.this, Objects.requireNonNull(task1.getException()).getMessage(),Toast.LENGTH_SHORT).show();
                             }
                         });
             } catch (ApiException e) {

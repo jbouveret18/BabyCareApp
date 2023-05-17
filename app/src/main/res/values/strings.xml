@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">BabyCare</string>
     <string name="default_web_client_id">1:671691850139:android:099809e1026fb67866613e</string>
+    <string name="email">Email :</string>
+    <string name="enter_email">Enter email</string>
+    <string name="name">Name :</string>
+    <string name="enter_name">Enter name</string>
+    <string name="last_name">Last name :</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="birthday">Birthday :</string>
+    <string name="enter_birthday">Enter Birthday</string>
+    <string name="next">Next</string>
+    <string name="adress">Adress</string>
+    <string name="country_of_residence">Country of residence :</string>
+    <string name="country">Country</string>
+    <string name="region">Region :</string>
+    <string name="street">Street :</string>
+    <string name="enter_your_street">Enter your street</string>
+    <string name="postal_code">Postal Code :</string>
+    <string name="enter_postal_code">Enter Postal code</string>
+    <string name="finish">Finish</string>
+    <string name="region_list">Region</string>
 </resources>
