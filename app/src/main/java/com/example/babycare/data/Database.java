@@ -88,7 +88,7 @@ public class Database extends AppCompatActivity {
             writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key),region,country,street,postalCode);
         });
         skip.setOnClickListener(view -> setContentView(R.layout.user_information_page));
-        ValueEventListener user = databaseReference.child("user").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("user").addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -111,7 +111,7 @@ public class Database extends AppCompatActivity {
             }
         });
 
-        ValueEventListener address = databaseReference.child("address").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("address").addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
