@@ -50,22 +50,13 @@ public class Database extends AppCompatActivity {
     Button addressPage = findViewById(R.id.AdressPage);
     Button finishSignUp = findViewById(R.id.FinishSignUp);
     Button skip = findViewById(R.id.skip);
+    EditText firstNameDisplay = findViewById(R.id.firstNameDisplay);
+    EditText lastNameDisplay = findViewById(R.id.lastNameDisplay);
+    EditText emailDisplay = findViewById(R.id.emailDisplay);
+    EditText birthdayDisplay = findViewById(R.id.birthdayDisplay);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        databaseReference.child("user").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
         super.onCreate(savedInstanceState);
         String country = countryInput.getText().toString();
         String region = regionInput.getText().toString();
@@ -93,6 +84,27 @@ public class Database extends AppCompatActivity {
             writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key),region,country,street,postalCode);
         });
         skip.setOnClickListener(view -> setContentView(R.layout.user_information_page));
+        databaseReference.child("user").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    firstNameDisplay.setText(firstName);
+                    lastNameDisplay.setText(lastName);
+                    emailDisplay.setText(email);
+                    birthdayDisplay.setText(birthdayUnformatted);
+                } else {
+                    firstNameDisplay.setText("Not Found");
+                    lastNameDisplay.setText("Not Found");
+                    emailDisplay.setText("Not Found");
+                    birthdayDisplay.setText("Not Found");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
 
