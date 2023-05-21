@@ -15,36 +15,4 @@ public class Address extends User {
         this.street = street;
         this.postalCode = postalCode;
     }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public int getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
-    }
 }
