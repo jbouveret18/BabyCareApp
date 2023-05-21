@@ -9,6 +9,6 @@ public class HomePage extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_page);
+        setContentView(R.layout.user_information_page);
     }
 }
