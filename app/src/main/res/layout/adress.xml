@@ -161,5 +161,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck" />
 
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="87dp"
+        android:text="Skip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/FinishSignUp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PostalCodeText" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
