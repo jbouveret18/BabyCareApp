@@ -5,23 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <EditText
         android:id="@+id/displayNameTextView"
-        android:layout_width="110dp"
-        android:layout_height="37dp"
-        android:layout_marginEnd="136dp"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="137dp"
+        android:layout_marginEnd="140dp"
         android:layout_marginBottom="64dp"
-        android:text="TextView"
+        android:hint="@string/enter_name"
         app:layout_constraintBottom_toTopOf="@+id/emailTextView"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/emailTextView"
-        android:layout_width="87dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="148dp"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="140dp"
         android:layout_marginBottom="460dp"
-        android:text="TextView"
+        android:hint="@string/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -31,8 +33,8 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="131dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="107dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
         android:text="Display Name"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/displayNameTextView"
@@ -45,9 +47,12 @@
         android:id="@+id/textView4"
         android:layout_width="108dp"
         android:layout_height="41dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="452dp"
         android:text="Email"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/emailTextView" />
+        app:layout_constraintEnd_toStartOf="@+id/emailTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

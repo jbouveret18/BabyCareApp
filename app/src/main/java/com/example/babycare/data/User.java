@@ -3,8 +3,12 @@ package com.example.babycare.data;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicLong;
+
 @IgnoreExtraProperties
 public class User {
+    private static AtomicLong counter = new AtomicLong(0);
+
     public final long key;
     public String firstName;
     public String lastName;
@@ -53,5 +57,8 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.birthday = birthday;
+    }
+    public static long generatePrimaryKey() {
+        return counter.incrementAndGet();
     }
 }
