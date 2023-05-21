@@ -1,22 +1,17 @@
 package com.example.babycare.data;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,10 +19,10 @@ import java.util.Date;
 
 
 public class Database extends AppCompatActivity {
-    static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-mm-yyyy");
+    @SuppressLint("SimpleDateFormat")
+    static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
     public static Date convertDateIntoString(String string) throws ParseException {
-        Date convertedCurrentDate = simpleDateFormat.parse(string);
-        return convertedCurrentDate;
+        return simpleDateFormat.parse(string);
     }
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -37,8 +32,8 @@ public class Database extends AppCompatActivity {
         return user;
     }
     public void writeUserAddress(User user,String region, String country,String street, int postalCode){
-        Address address = new Address(user.key, user.firstName, user.lastName, user.email, user.birthday,region,country,street,postalCode);
-        databaseReference.child("address").child(String.valueOf(user.key)).setValue(address);
+        Address address = new Address(user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(),region,country,street,postalCode);
+        databaseReference.child("address").child(String.valueOf(user.getKey())).setValue(address);
     }
     EditText emailInput = findViewById(R.id.emailInput);
     EditText lastNameInput = findViewById(R.id.lastNameInput);
@@ -65,34 +60,22 @@ public class Database extends AppCompatActivity {
         String birthdayUnformatted = birthdayInput.getText().toString();
         String email = emailInput.getText().toString();
         long key = User.generatePrimaryKey();
-        Date birthday = null;
+        Date birthday;
         try {
             birthday = convertDateIntoString(birthdayUnformatted);
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
         Date finalBirthday = birthday;
-        addressPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.adress);
-                writeNewUser(firstName,lastName,email, finalBirthday,key);
-            }
+        addressPage.setOnClickListener(view -> {
+            setContentView(R.layout.adress);
+            writeNewUser(firstName,lastName,email, finalBirthday,key);
         });
-        finishSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.home_page);
-                writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key),region,country,street,postalCode);
-            }
+        finishSignUp.setOnClickListener(view -> {
+            setContentView(R.layout.home_page);
+            writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key),region,country,street,postalCode);
         });
-        skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.home_page);
-            }
-        });
-
+        skip.setOnClickListener(view -> setContentView(R.layout.home_page));
     }
 }
 

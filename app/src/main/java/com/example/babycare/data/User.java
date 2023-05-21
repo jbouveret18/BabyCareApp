@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @IgnoreExtraProperties
 public class User {
-    private static AtomicLong counter = new AtomicLong(0);
+    private static final AtomicLong counter = new AtomicLong(0);
 
     public final long key;
     public String firstName;
@@ -23,32 +23,16 @@ public class User {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public Date getBirthday() {
         return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
     }
 
     public User(long key, String firstName, String lastName, String email, Date birthday) {
