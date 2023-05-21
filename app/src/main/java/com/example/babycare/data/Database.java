@@ -105,6 +105,20 @@ public class Database extends AppCompatActivity {
 
             }
         });
+
+        databaseReference.child("address").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        })
     }
 }
 
