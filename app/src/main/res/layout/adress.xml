@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/AdressTitleText"
+        android:id="@+id/AddressTitleText"
         android:layout_width="207dp"
         android:layout_height="45dp"
         android:layout_marginStart="112dp"
@@ -14,7 +14,7 @@
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="46dp"
         android:gravity="center"
-        android:text="@string/adress"
+        android:text="@string/address_information"
         app:layout_constraintBottom_toTopOf="@+id/countries_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/CountryText"
-        app:layout_constraintTop_toBottomOf="@+id/AdressTitleText"
+        app:layout_constraintTop_toBottomOf="@+id/AddressTitleText"
         tools:ignore="MissingConstraints">
 
         <requestFocus />

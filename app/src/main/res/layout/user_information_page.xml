@@ -57,7 +57,7 @@
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:text="@string/email"
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+                tools:ignore="LabelFor,TextFields,VisualLintTextFieldSize" />
 
             <EditText
                 android:id="@+id/birthdayDisplay"
@@ -79,7 +79,7 @@
                 android:minHeight="48dp"
                 android:text="@string/country"
                 android:autofillHints=""
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
             <EditText
                 android:id="@+id/regionDisplay"
@@ -90,7 +90,7 @@
                 android:minHeight="48dp"
                 android:text="@string/region"
                 android:autofillHints=""
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
             <EditText
                 android:id="@+id/streetDisplay"
@@ -101,7 +101,7 @@
                 android:minHeight="48dp"
                 android:text="@string/street"
                 android:autofillHints=""
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
             <EditText
                 android:id="@+id/postalCodeDisplay"
@@ -112,7 +112,7 @@
                 android:minHeight="48dp"
                 android:text="@string/postal_code"
                 android:autofillHints=""
-                tools:ignore="VisualLintTextFieldSize" />
+                tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
         </LinearLayout>
     </ScrollView>

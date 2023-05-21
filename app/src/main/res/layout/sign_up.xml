@@ -118,13 +118,13 @@
         android:hint="@string/enter_birthday"
         android:inputType="date"
         android:textColorHint="#8D6E63"
-        app:layout_constraintBottom_toTopOf="@+id/AdressPage"
+        app:layout_constraintBottom_toTopOf="@+id/AddressPage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/BirthdayText"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/AdressPage"
+        android:id="@+id/AddressPage"
         android:layout_width="142dp"
         android:layout_height="48dp"
         android:layout_marginStart="231dp"
