@@ -6,12 +6,16 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -49,6 +53,19 @@ public class Database extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        databaseReference.child("user").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         super.onCreate(savedInstanceState);
         String country = countryInput.getText().toString();
         String region = regionInput.getText().toString();
@@ -72,10 +89,10 @@ public class Database extends AppCompatActivity {
             writeNewUser(firstName,lastName,email, finalBirthday,key);
         });
         finishSignUp.setOnClickListener(view -> {
-            setContentView(R.layout.home_page);
+            setContentView(R.layout.user_information_page);
             writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key),region,country,street,postalCode);
         });
-        skip.setOnClickListener(view -> setContentView(R.layout.home_page));
+        skip.setOnClickListener(view -> setContentView(R.layout.user_information_page));
     }
 }
 

@@ -30,7 +30,7 @@ public class AdressPage extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.home_page);
+                setContentView(R.layout.user_information_page);
             }
         });
 
