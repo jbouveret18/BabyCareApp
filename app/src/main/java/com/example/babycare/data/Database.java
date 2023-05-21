@@ -54,6 +54,10 @@ public class Database extends AppCompatActivity {
     EditText lastNameDisplay = findViewById(R.id.lastNameDisplay);
     EditText emailDisplay = findViewById(R.id.emailDisplay);
     EditText birthdayDisplay = findViewById(R.id.birthdayDisplay);
+    EditText countryDisplay = findViewById(R.id.countryDisplay);
+    EditText regionDisplay = findViewById(R.id.regionDisplay);
+    EditText streetDisplay = findViewById(R.id.streetDisplay);
+    EditText postalCodeDisplay = findViewById(R.id.postalCodeDisplay);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -84,7 +88,8 @@ public class Database extends AppCompatActivity {
             writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key),region,country,street,postalCode);
         });
         skip.setOnClickListener(view -> setContentView(R.layout.user_information_page));
-        databaseReference.child("user").addValueEventListener(new ValueEventListener() {
+        ValueEventListener user = databaseReference.child("user").addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
@@ -106,19 +111,27 @@ public class Database extends AppCompatActivity {
             }
         });
 
-        databaseReference.child("address").addValueEventListener(new ValueEventListener() {
+        ValueEventListener address = databaseReference.child("address").addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-
+                if (snapshot.exists()) {
+                    countryDisplay.setText(country);
+                    regionDisplay.setText(region);
+                    streetDisplay.setText(street);
+                    postalCodeDisplay.setText(postalCode);
                 }
+                countryDisplay.setText("Not Found");
+                regionDisplay.setText("Not Found");
+                streetDisplay.setText("Not Found");
+                postalCodeDisplay.setText("Not Found");
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        })
+        });
     }
 }
 
