@@ -15,6 +15,8 @@ public class User {
     public String email;
     public Date birthday;
 
+    public String password;
+
     public long getKey() {
         return key;
     }
@@ -35,13 +37,23 @@ public class User {
         return birthday;
     }
 
-    public User(long key, String firstName, String lastName, String email, Date birthday) {
+    public User(long key, String firstName, String lastName, String email, Date birthday, String password) {
         this.key = key;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.birthday = birthday;
+        this.password = password;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public static long generatePrimaryKey() {
         return counter.incrementAndGet();
     }

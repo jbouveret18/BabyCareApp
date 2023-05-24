@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/passwordInput"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".sing_up.SignUp">
@@ -99,13 +100,29 @@
         android:layout_width="98dp"
         android:layout_height="41dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="341dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="56dp"
         android:gravity="center"
         android:text="@string/birthday"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/passwordText"
+        app:layout_constraintEnd_toStartOf="@+id/birthdayInput"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
+
+    <TextView
+        android:id="@+id/passwordText"
+        android:layout_width="98dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="244dp"
+        android:gravity="center"
+        android:text="Password :"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/passwordInput"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/birthdayInput"
@@ -120,6 +137,23 @@
         android:textColorHint="#8D6E63"
         app:layout_constraintBottom_toTopOf="@+id/AddressPage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BirthdayText"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="211dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="96dp"
+        android:autofillHints=""
+        android:inputType="textPassword"
+        android:text="Password"
+        android:textColorHint="#8D6E63"
+        app:layout_constraintBottom_toTopOf="@+id/AddressPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/BirthdayText"
         tools:ignore="MissingConstraints" />
 
