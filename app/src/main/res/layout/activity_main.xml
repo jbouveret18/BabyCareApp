@@ -12,23 +12,21 @@
         android:id="@+id/view"
         android:layout_width="169dp"
         android:layout_height="169dp"
-        android:layout_marginTop="40dp"
         android:background="@drawable/circle_gradient"
         app:layout_constraintBottom_toTopOf="@+id/SignUp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.223" />
 
     <ImageView
         android:layout_width="77dp"
         android:layout_height="97dp"
+        android:layout_marginBottom="144dp"
         android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/SignUp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.647"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="246dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/SignUp"
