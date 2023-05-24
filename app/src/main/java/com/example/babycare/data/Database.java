@@ -110,6 +110,7 @@ public class Database extends AppCompatActivity {
             throw new RuntimeException(e);
         }
         Date finalBirthday = birthday;
+
         List<Object> userInformation = new ArrayList<>();
         userInformation.add(firstName);
         userInformation.add(lastName);
@@ -118,17 +119,28 @@ public class Database extends AppCompatActivity {
         userInformation.add(password);
         userInformation.add(passwordVerify);
 
+        List<Object> addressInformation = new ArrayList<>();
+        addressInformation.add(country);
+        addressInformation.add(region);
+        addressInformation.add(street);
+        addressInformation.add(postalCode);
+
         addressPage.setOnClickListener(view -> {
             if(!isEmpty(userInformation)){
                 setContentView(R.layout.adress);
                 writeNewUser(firstName,lastName,email, finalBirthday,key, password);
             } else {
-                displayAlert(!isEmpty(userInformation));
+                displayAlert(isEmpty(userInformation));
             }
         });
         finishSignUp.setOnClickListener(view -> {
-            setContentView(R.layout.user_information_page);
-            writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key,password),region,country,street,postalCode);
+            if(!isEmpty(addressInformation)){
+                setContentView(R.layout.user_information_page);
+                writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key,password),region,country,street,postalCode);
+            } else {
+                displayAlert(isEmpty(addressInformation));
+            }
+
         });
         skip.setOnClickListener(view -> setContentView(R.layout.user_information_page));
         databaseReference.child("user").addValueEventListener(new ValueEventListener() {
