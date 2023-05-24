@@ -8,11 +8,8 @@ public class Address extends User {
     String street;
     int postalCode;
 
-    public Address(long key, String firstName, String lastName, String email, Date birthday, String region, String country, String street, int postalCode) {
-        super(key, firstName, lastName, email, birthday);
-        this.region = region;
-        this.country = country;
-        this.street = street;
-        this.postalCode = postalCode;
+
+    public Address(long key, String firstName, String lastName, String email, Date birthday, String userPassword, String region, String country, String password, int postalCode) {
+        super(key, firstName, lastName, email, birthday, password);
     }
 }

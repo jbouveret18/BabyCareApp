@@ -30,13 +30,13 @@ public class Database extends AppCompatActivity {
     }
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference();
-    public User writeNewUser(String firstName, String lastName, String email, Date birthday,long key) {
-        User user = new User(key, firstName,lastName,email,birthday);
+    public User writeNewUser(String firstName, String lastName, String email, Date birthday,long key, String password) {
+        User user = new User(key, firstName,lastName,email,birthday, password);
         databaseReference.child("user").child(String.valueOf(key)).setValue(user);
         return user;
     }
     public void writeUserAddress(User user,String region, String country,String street, int postalCode){
-        Address address = new Address(user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(),region,country,street,postalCode);
+        Address address = new Address(user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(),user.getPassword(),region,country,street,postalCode);
         databaseReference.child("address").child(String.valueOf(user.getKey())).setValue(address);
     }
     EditText emailInput = findViewById(R.id.emailInput);
@@ -47,7 +47,8 @@ public class Database extends AppCompatActivity {
     AutoCompleteTextView regionInput = findViewById(R.id.region_list);
     EditText streetInput = findViewById(R.id.streetInput);
     EditText postalCodeInput = findViewById(R.id.postalCodeInput);
-    Button addressPage = findViewById(R.id.AdressPage);
+    EditText passwordInput = findViewById(R.id.passwordInput);
+    Button addressPage = findViewById(R.id.AddressPage);
     Button finishSignUp = findViewById(R.id.FinishSignUp);
     Button skip = findViewById(R.id.skip);
     EditText firstNameDisplay = findViewById(R.id.firstNameDisplay);
@@ -58,6 +59,7 @@ public class Database extends AppCompatActivity {
     EditText regionDisplay = findViewById(R.id.regionDisplay);
     EditText streetDisplay = findViewById(R.id.streetDisplay);
     EditText postalCodeDisplay = findViewById(R.id.postalCodeDisplay);
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,6 +73,7 @@ public class Database extends AppCompatActivity {
         String lastName = lastNameInput.getText().toString();
         String birthdayUnformatted = birthdayInput.getText().toString();
         String email = emailInput.getText().toString();
+        String password = passwordInput.getText().toString();
         long key = User.generatePrimaryKey();
         Date birthday;
         try {
@@ -81,11 +84,11 @@ public class Database extends AppCompatActivity {
         Date finalBirthday = birthday;
         addressPage.setOnClickListener(view -> {
             setContentView(R.layout.adress);
-            writeNewUser(firstName,lastName,email, finalBirthday,key);
+            writeNewUser(firstName,lastName,email, finalBirthday,key,password);
         });
         finishSignUp.setOnClickListener(view -> {
             setContentView(R.layout.user_information_page);
-            writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key),region,country,street,postalCode);
+            writeUserAddress(writeNewUser(firstName,lastName,email,finalBirthday,key,password),region,country,street,postalCode);
         });
         skip.setOnClickListener(view -> setContentView(R.layout.user_information_page));
         databaseReference.child("user").addValueEventListener(new ValueEventListener() {
