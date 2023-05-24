@@ -64,7 +64,7 @@ public class Database extends AppCompatActivity {
     EditText streetDisplay = findViewById(R.id.streetDisplay);
     EditText postalCodeDisplay = findViewById(R.id.postalCodeDisplay);
 
-    public boolean PasswordEnteredProperly(String password, String passwordVerifyInput){
+    public boolean passwordEnteredProperly(String password, String passwordVerifyInput){
         return password.equals(passwordVerifyInput);
     }
     public boolean isEmpty(List<Object> informationList){
@@ -101,7 +101,7 @@ public class Database extends AppCompatActivity {
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
         String passwordVerify = passwordVerifyInput.getText().toString();
-        displayAlert(PasswordEnteredProperly(password,passwordVerify));
+        displayAlert(passwordEnteredProperly(password,passwordVerify));
         long key = User.generatePrimaryKey();
         Date birthday;
         try {
@@ -126,7 +126,7 @@ public class Database extends AppCompatActivity {
         addressInformation.add(postalCode);
 
         addressPage.setOnClickListener(view -> {
-            if(!isEmpty(userInformation)){
+            if(!isEmpty(userInformation)&& passwordEnteredProperly(password,passwordVerify)){
                 setContentView(R.layout.adress);
                 writeNewUser(firstName,lastName,email, finalBirthday,key, password);
             } else {
