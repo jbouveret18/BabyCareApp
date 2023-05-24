@@ -2,12 +2,14 @@ package com.example.babycare.data;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.R;
@@ -19,7 +21,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 public class Database extends AppCompatActivity {
@@ -48,6 +52,7 @@ public class Database extends AppCompatActivity {
     EditText streetInput = findViewById(R.id.streetInput);
     EditText postalCodeInput = findViewById(R.id.postalCodeInput);
     EditText passwordInput = findViewById(R.id.passwordInput);
+    EditText passwordVerifyInput = findViewById(R.id.passwordVerifyInput);
     Button addressPage = findViewById(R.id.AddressPage);
     Button finishSignUp = findViewById(R.id.FinishSignUp);
     Button skip = findViewById(R.id.skip);
@@ -60,6 +65,29 @@ public class Database extends AppCompatActivity {
     EditText streetDisplay = findViewById(R.id.streetDisplay);
     EditText postalCodeDisplay = findViewById(R.id.postalCodeDisplay);
 
+    public boolean PasswordEnteredProperly(String password, String passwordVerifyInput){
+        return password.equals(passwordVerifyInput);
+    }
+    public boolean isEmpty(List<Object> informationList){
+        for(Object information : informationList){
+            if(information == null){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public AlertDialog displayAlert(boolean check){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Input error");
+        builder.setMessage("All the fields haven't been entered properly");
+        AlertDialog dialog = builder.create();
+        if(check){
+            return null;
+        }
+        dialog.show();
+        return dialog;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,6 +102,8 @@ public class Database extends AppCompatActivity {
         String birthdayUnformatted = birthdayInput.getText().toString();
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
+        String passwordVerify = passwordVerifyInput.getText().toString();
+        displayAlert(PasswordEnteredProperly(password,passwordVerify));
         long key = User.generatePrimaryKey();
         Date birthday;
         try {
@@ -82,9 +112,21 @@ public class Database extends AppCompatActivity {
             throw new RuntimeException(e);
         }
         Date finalBirthday = birthday;
+        List<Object> userInformation = new ArrayList<>();
+        userInformation.add(firstName);
+        userInformation.add(lastName);
+        userInformation.add(email);
+        userInformation.add(birthdayUnformatted);
+        userInformation.add(password);
+        userInformation.add(passwordVerify);
+
         addressPage.setOnClickListener(view -> {
-            setContentView(R.layout.adress);
-            writeNewUser(firstName,lastName,email, finalBirthday,key,password);
+            if(!isEmpty(userInformation)){
+                setContentView(R.layout.adress);
+                writeNewUser(firstName,lastName,email, finalBirthday,key, password);
+            } else {
+                displayAlert(!isEmpty(userInformation));
+            }
         });
         finishSignUp.setOnClickListener(view -> {
             setContentView(R.layout.user_information_page);
