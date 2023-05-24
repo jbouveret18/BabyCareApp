@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
     <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/user_information"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,58 +17,61 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/personalInfoTitle2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:textSize="@android:dimen/app_icon_size"
-                android:text="@string/personal_information" />
+                android:layout_height="match_parent"
+                android:text="User Information"
+                tools:ignore="MissingConstraints" />
 
             <EditText
                 android:id="@+id/firstNameDisplay"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:autofillHints=""
                 android:ems="10"
                 android:inputType="text"
-                android:text="@string/name"
-                tools:ignore="LabelFor,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+                android:minHeight="48dp"
+                android:text="Name"
+                tools:text="@string/name" />
 
             <EditText
                 android:id="@+id/lastNameDisplay"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:autofillHints=""
                 android:ems="10"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@string/last_name"
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+                android:text="Name"
+                tools:text="@string/last_name" />
 
             <EditText
                 android:id="@+id/emailDisplay"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@string/email"
-                tools:ignore="LabelFor,TextFields,VisualLintTextFieldSize" />
+                android:text="Name"
+                tools:text="@string/email" />
 
             <EditText
                 android:id="@+id/birthdayDisplay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
                 android:ems="10"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@string/birthday"
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+                android:text="Name"
+                tools:text="@string/birthday" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Adress Information" />
 
             <EditText
                 android:id="@+id/countryDisplay"
@@ -77,9 +80,8 @@
                 android:ems="10"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@string/country"
-                android:autofillHints=""
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+                android:text="Name"
+                tools:text="@string/country" />
 
             <EditText
                 android:id="@+id/regionDisplay"
@@ -88,9 +90,8 @@
                 android:ems="10"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@string/region"
-                android:autofillHints=""
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+                android:text="Name"
+                tools:text="@string/region" />
 
             <EditText
                 android:id="@+id/streetDisplay"
@@ -99,21 +100,19 @@
                 android:ems="10"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@string/street"
-                android:autofillHints=""
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
+                android:text="Name"
+                tools:text="@string/street" />
 
             <EditText
                 android:id="@+id/postalCodeDisplay"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:inputType="text"
                 android:minHeight="48dp"
-                android:text="@string/postal_code"
-                android:autofillHints=""
-                tools:ignore="LabelFor,VisualLintTextFieldSize" />
-
+                android:text="Name"
+                tools:text="@string/postal_code" />
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
