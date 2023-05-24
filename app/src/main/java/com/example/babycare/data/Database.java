@@ -2,7 +2,6 @@ package com.example.babycare.data;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -77,16 +76,15 @@ public class Database extends AppCompatActivity {
         return false;
     }
 
-    public AlertDialog displayAlert(boolean check){
+    public void displayAlert(boolean check){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Input error");
         builder.setMessage("All the fields haven't been entered properly");
         AlertDialog dialog = builder.create();
         if(check){
-            return null;
+            return;
         }
         dialog.show();
-        return dialog;
     }
 
     @Override
