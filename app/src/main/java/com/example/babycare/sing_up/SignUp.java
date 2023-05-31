@@ -67,7 +67,7 @@ public class SignUp extends AppCompatActivity {
         dialog.show();
     }
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
         EditText emailInput = findViewById(R.id.emailInput);
