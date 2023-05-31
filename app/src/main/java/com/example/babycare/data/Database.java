@@ -126,7 +126,7 @@ public class Database extends AppCompatActivity {
         addressInformation.add(postalCode);
 
         addressPage.setOnClickListener(view -> {
-            if(!isEmpty(userInformation)&& passwordEnteredProperly(password,passwordVerify)){
+            if(!isEmpty(userInformation) && passwordEnteredProperly(password,passwordVerify)){
                 setContentView(R.layout.adress);
                 writeNewUser(firstName,lastName,email, finalBirthday,key, password);
             } else {
