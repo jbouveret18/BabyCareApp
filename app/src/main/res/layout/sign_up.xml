@@ -96,6 +96,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/next"
+                android:clickable="true"
                 tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck,VisualLintButtonSize" />
 
         </LinearLayout>
