@@ -4,16 +4,17 @@ import static com.example.babycare.data.Database.convertDateIntoString;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.babycare.MainActivity;
 import com.example.babycare.R;
 import com.example.babycare.data.Database;
 import com.example.babycare.data.User;
@@ -28,17 +29,10 @@ import java.util.List;
 
 public class SignUp extends AppCompatActivity {
     Database database = new Database();
-    EditText emailInput = findViewById(R.id.emailInput);
-    EditText lastNameInput = findViewById(R.id.lastNameInput);
-    EditText firstNameInput = findViewById(R.id.firstNameInput);
-    EditText birthdayInput = findViewById(R.id.birthdayInput);
     AutoCompleteTextView countryInput = findViewById(R.id.countries_list);
     AutoCompleteTextView regionInput = findViewById(R.id.region_list);
     EditText streetInput = findViewById(R.id.streetInput);
     EditText postalCodeInput = findViewById(R.id.postalCodeInput);
-    EditText passwordInput = findViewById(R.id.passwordInput);
-    EditText passwordVerifyInput = findViewById(R.id.passwordVerifyInput);
-    Button addressPage = findViewById(R.id.addressPage);
     Button finishSignUp = findViewById(R.id.FinishSignUp);
     Button skip = findViewById(R.id.skip);
     EditText firstNameDisplay = findViewById(R.id.firstNameDisplay);
@@ -76,6 +70,13 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
+        EditText emailInput = findViewById(R.id.emailInput);
+        EditText lastNameInput = findViewById(R.id.lastNameInput);
+        EditText firstNameInput = findViewById(R.id.firstNameInput);
+        EditText birthdayInput = findViewById(R.id.birthdayInput);
+        EditText passwordInput = findViewById(R.id.passwordInput);
+        EditText passwordVerifyInput = findViewById(R.id.passwordVerifyInput);
+        Button addressPage = findViewById(R.id.addressPage);
         addressPage.setOnClickListener(view -> {
             String country = countryInput.getText().toString();
             String region = regionInput.getText().toString();
@@ -111,60 +112,49 @@ public class SignUp extends AppCompatActivity {
             if(!isEmpty(userInformation) && passwordEnteredProperly(password,passwordVerify)){
                 database.writeNewUser(firstName,lastName,email, birthday,key, password);
                 setContentView(R.layout.adress);
-                finishSignUp.setOnClickListener(view1 -> {
-                    if(!isEmpty(addressInformation)){
-                        setContentView(R.layout.user_information_page);
-                        database.writeUserAddress(database.writeNewUser(firstName,lastName,email,birthday,key,password),region,country,street,postalCode);
-                    } else {
-                        displayAlert(isEmpty(addressInformation));
-                    }
-                    skip.setOnClickListener(view2 -> setContentView(R.layout.user_information_page));
-                });
             } else {
                 displayAlert(isEmpty(userInformation));
             }
-                database.databaseReference.child("user").addValueEventListener(new ValueEventListener() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.exists()){
-                            firstNameDisplay.setText(firstName);
-                            lastNameDisplay.setText(lastName);
-                            emailDisplay.setText(email);
-                            birthdayDisplay.setText(birthdayUnformatted);
-                        } else {
-                            firstNameDisplay.setText("Not Found");
-                            lastNameDisplay.setText("Not Found");
-                            emailDisplay.setText("Not Found");
-                            birthdayDisplay.setText("Not Found");
-                        }
+            database.databaseReference.child("user").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        firstNameDisplay.setText(firstName);
+                        lastNameDisplay.setText(lastName);
+                        emailDisplay.setText(email);
+                        birthdayDisplay.setText(birthdayUnformatted);
+                    } else {
+                        firstNameDisplay.setText("Not Found");
+                        lastNameDisplay.setText("Not Found");
+                        emailDisplay.setText("Not Found");
+                        birthdayDisplay.setText("Not Found");
                     }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        //TODO
-                    }
-                });
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    //TODO
+                }
+            });
 
-                database.databaseReference.child("address").addValueEventListener(new ValueEventListener() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-                            countryDisplay.setText(country);
-                            regionDisplay.setText(region);
-                            streetDisplay.setText(street);
-                            postalCodeDisplay.setText(postalCode);
-                        }
-                        countryDisplay.setText("Not Found");
-                        regionDisplay.setText("Not Found");
-                        streetDisplay.setText("Not Found");
-                        postalCodeDisplay.setText("Not Found");
+            database.databaseReference.child("address").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        countryDisplay.setText(country);
+                        regionDisplay.setText(region);
+                        streetDisplay.setText(street);
+                        postalCodeDisplay.setText(postalCode);
                     }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                    countryDisplay.setText("Not Found");
+                    regionDisplay.setText("Not Found");
+                    streetDisplay.setText("Not Found");
+                    postalCodeDisplay.setText("Not Found");
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
+                }
+            });
         });
     }
 }
