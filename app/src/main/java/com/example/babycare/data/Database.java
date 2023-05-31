@@ -52,7 +52,7 @@ public class Database extends AppCompatActivity {
     EditText postalCodeInput = findViewById(R.id.postalCodeInput);
     EditText passwordInput = findViewById(R.id.passwordInput);
     EditText passwordVerifyInput = findViewById(R.id.passwordVerifyInput);
-    Button addressPage = findViewById(R.id.AddressPage);
+    Button addressPage = findViewById(R.id.addressPage);
     Button finishSignUp = findViewById(R.id.FinishSignUp);
     Button skip = findViewById(R.id.skip);
     EditText firstNameDisplay = findViewById(R.id.firstNameDisplay);
