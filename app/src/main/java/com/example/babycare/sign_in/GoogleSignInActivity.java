@@ -1,4 +1,4 @@
-package com.example.babycare.sing_up;
+package com.example.babycare.sign_in;
 
 import android.content.Intent;
 import android.util.Log;
@@ -8,13 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.HomePage;
 import com.example.babycare.R;
-import com.example.babycare.data.Database;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class SignInActivity extends AppCompatActivity {
+public class GoogleSignInActivity extends AppCompatActivity {
     public final int RC_SIGN_IN = 1234;
 
 
@@ -32,7 +31,7 @@ public class SignInActivity extends AppCompatActivity {
             finish();
         } else {
             setContentView(R.layout.sign_up);
-            Intent userInformationIntent = new Intent(this, SignInActivity.class);
+            Intent userInformationIntent = new Intent(this, GoogleSignInActivity.class);
             startActivity(userInformationIntent);
         }
     }

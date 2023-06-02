@@ -37,21 +37,12 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/Facebook"
+            android:id="@+id/SignIn"
             android:layout_width="240dp"
             android:layout_height="72dp"
             android:contentDescription="@string/app_name"
             android:gravity="center"
-            android:text="Sign in with Facebook account"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/Apple"
-            android:layout_width="240dp"
-            android:layout_height="72dp"
-            android:contentDescription="@string/app_name"
-            android:gravity="center"
-            android:text="Sign in with Apple ID"
+            android:text="Sign in"
             tools:ignore="MissingConstraints" />
 
         <Button
@@ -63,6 +54,16 @@
             android:text="Sign up"
 
             tools:ignore="MissingConstraints, DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/About"
+            android:layout_width="240dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+        android:text="About"
+            tools:ignore="MissingConstraints" />
+
     </LinearLayout>
 
 

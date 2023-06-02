@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.babycare.sing_up.SignInActivity;
+import com.example.babycare.sign_in.GoogleSignInActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -16,7 +16,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
 public class MainActivity extends AppCompatActivity {
-    SignInActivity signInActivity = new SignInActivity();
+    GoogleSignInActivity googleSignInActivity = new GoogleSignInActivity();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,20 +30,20 @@ public class MainActivity extends AppCompatActivity {
                     .build();
             GoogleSignInClient client = GoogleSignIn.getClient(this, options);
             Intent intent = client.getSignInIntent();
-            startActivityForResult(intent,signInActivity.RC_SIGN_IN);
+            startActivityForResult(intent, googleSignInActivity.RC_SIGN_IN);
         });
-        signUpButton.setOnClickListener(v -> {Intent signUpIntent = new Intent(MainActivity.this, SignInActivity.class);
+        signUpButton.setOnClickListener(v -> {Intent signUpIntent = new Intent(MainActivity.this, GoogleSignInActivity.class);
         startActivity(signUpIntent);});
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == signInActivity.RC_SIGN_IN) {
+        if (requestCode == googleSignInActivity.RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 // Successfully signed in
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                signInActivity.firebaseAuthWithGoogle(account.getIdToken());
+                googleSignInActivity.firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 setContentView(R.layout.sign_up);
                 // Sign-in failed
