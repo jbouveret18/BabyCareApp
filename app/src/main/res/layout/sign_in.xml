@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/SignInInputEmail"
             android:layout_width="174dp"
             android:layout_height="180dp"
             android:layout_centerInParent="true"

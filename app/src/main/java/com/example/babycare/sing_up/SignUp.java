@@ -2,17 +2,13 @@ package com.example.babycare.sing_up;
 
 import static com.example.babycare.data.Database.convertDateIntoString;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,7 +44,7 @@ public class SignUp extends AppCompatActivity {
     public boolean passwordEnteredProperly(String password, String passwordVerifyInput){
         return password.equals(passwordVerifyInput);
     }
-    public boolean isEmpty(List<Object> informationList){
+    public boolean listIsNotComplete(List<Object> informationList){
         for(Object information : informationList){
             if(information == null){
                 return true;
@@ -58,14 +54,10 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void displayAlert(boolean check){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Input error");
-        builder.setMessage("All the fields haven't been entered properly");
-        AlertDialog dialog = builder.create();
         if(check){
             return;
         }
-        dialog.show();
+        Toast.makeText(getApplicationContext(), "Fields not complete", Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,11 +102,11 @@ public class SignUp extends AppCompatActivity {
             addressInformation.add(region);
             addressInformation.add(street);
             addressInformation.add(postalCode);
-            if(!isEmpty(userInformation) && passwordEnteredProperly(password,passwordVerify)){
+            if(!listIsNotComplete(userInformation) && passwordEnteredProperly(password,passwordVerify)){
                 database.writeNewUser(firstName,lastName,email, birthday,key, password);
                 setContentView(R.layout.adress);
             } else {
-                displayAlert(isEmpty(userInformation));
+                displayAlert(listIsNotComplete(userInformation));
             }
             database.databaseReference.child("user").addValueEventListener(new ValueEventListener() {
                 @Override
