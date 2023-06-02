@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.SignUp);
+        Button signUpButton = findViewById(R.id.SignUp);
         Button googleSignInButton = findViewById(R.id.Google);
         googleSignInButton.setOnClickListener(v ->{
             GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = client.getSignInIntent();
             startActivityForResult(intent,signInActivity.RC_SIGN_IN);
         });
-        button.setOnClickListener(v -> setContentView(R.layout.sign_up));
+        signUpButton.setOnClickListener(v -> {Intent signUpIntent = new Intent(MainActivity.this, SignInActivity.class);
+        startActivity(signUpIntent);});
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

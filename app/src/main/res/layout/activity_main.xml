@@ -8,90 +8,62 @@
     tools:context=".MainActivity">
 
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="169dp"
-        android:layout_height="169dp"
-        android:background="@drawable/circle_gradient"
-        app:layout_constraintBottom_toTopOf="@+id/SignUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223" />
-
-    <ImageView
-        android:layout_width="77dp"
-        android:layout_height="97dp"
-        android:layout_marginBottom="144dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/SignUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/SignUp"
-
-        android:layout_width="242dp"
-
-        android:layout_height="72dp"
-        android:contentDescription="@string/app_name"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:gravity="center"
-        android:text="Sign up"
-        
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454"
-        tools:ignore="MissingConstraints, DuplicateSpeakableTextCheck" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/Google"
-        android:layout_width="231dp"
-        android:layout_height="82dp"
-        android:contentDescription="@string/app_name"
-        android:gravity="center"
-        android:text="Sign in with google"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:layout_width="228dp"
+            android:layout_height="215dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/circle_gradient"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/logo" />
 
-    <Button
-        android:id="@+id/Apple"
-        android:layout_width="229dp"
-        android:layout_height="77dp"
-        android:contentDescription="@string/app_name"
-        android:gravity="center"
-        android:text="Sign in with Apple ID"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/Google"
+            android:layout_width="240dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Sign in with google"
+            tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/Facebook"
-        android:layout_width="222dp"
-        android:layout_height="64dp"
-        android:contentDescription="@string/app_name"
-        android:gravity="center"
-        android:text="Sign in with Facebook account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.839"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/Facebook"
+            android:layout_width="240dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Sign in with Facebook account"
+            tools:ignore="MissingConstraints" />
 
+        <Button
+            android:id="@+id/Apple"
+            android:layout_width="240dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Sign in with Apple ID"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/SignUp"
+            android:layout_width="240dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/app_name"
+            android:gravity="center"
+            android:text="Sign up"
+
+            tools:ignore="MissingConstraints, DuplicateSpeakableTextCheck" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

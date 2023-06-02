@@ -10,9 +10,10 @@
     tools:layout_editor_absoluteY="-249dp">
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -29,8 +30,21 @@
                 android:id="@+id/firstNameInput"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
                 android:autofillHints=""
                 android:hint="@string/enter_name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#8D6E63"
+                tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
+
+            <EditText
+                android:id="@+id/lastNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:autofillHints=""
+                android:hint="@string/enter_last_name"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColorHint="#8D6E63"
@@ -40,6 +54,7 @@
                 android:id="@+id/emailInput"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
                 android:autofillHints=""
                 android:hint="@string/enter_email"
                 android:inputType="textEmailAddress"
@@ -48,23 +63,13 @@
                 tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
 
             <EditText
-                android:id="@+id/lastNameInput"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
-                android:hint="@string/enter_last_name"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColorHint="#8D6E63"
-                tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
-
-            <EditText
                 android:id="@+id/birthdayInput"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
                 android:autofillHints=""
                 android:hint="@string/enter_birthday"
-                android:inputType="date"
+                android:inputType="datetime"
                 android:minHeight="48dp"
                 android:textColorHint="#8D6E63"
                 tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
@@ -73,6 +78,7 @@
                 android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
                 android:autofillHints=""
                 android:hint="@string/password"
                 android:inputType="textVisiblePassword"
@@ -84,6 +90,7 @@
                 android:id="@+id/passwordVerifyInput"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
                 android:autofillHints=""
                 android:hint="@string/password"
                 android:inputType="textVisiblePassword"
@@ -94,12 +101,12 @@
                 android:id="@+id/addressPage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:clickable="true"
                 android:gravity="center"
                 android:text="@string/next"
-                android:clickable="true"
                 tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck,VisualLintButtonSize" />
 
         </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
