@@ -26,12 +26,14 @@ public class SignInActivity extends AppCompatActivity {
             TextView emailTextView = findViewById(R.id.emailDisplay);
             displayNameTextView.setText(displayName);
             emailTextView.setText(email);
-            Intent intent = new Intent(this, Database.class);
-            startActivity(intent);
+            Intent userInformationIntent = new Intent(this, HomePage.class);
+            startActivity(userInformationIntent);
             setContentView(R.layout.user_information_page);
             finish();
         } else {
             setContentView(R.layout.sign_up);
+            Intent userInformationIntent = new Intent(this, SignInActivity.class);
+            startActivity(userInformationIntent);
         }
     }
     public void firebaseAuthWithGoogle(String idToken) {
@@ -46,6 +48,7 @@ public class SignInActivity extends AppCompatActivity {
                         Error error = new Error("Connection error");
                     }
                 });
+
     }
 
 }

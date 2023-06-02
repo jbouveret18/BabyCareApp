@@ -40,9 +40,10 @@ public class Database {
         databaseReference.child("user").child(String.valueOf(key)).setValue(user);
         return user;
     }
-    public void writeUserAddress(User user,String region, String country,String street, int postalCode){
+    public Address writeUserAddress(User user,String region, String country,String street, int postalCode){
         Address address = new Address(user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(),user.getPassword(),region,country,street,postalCode);
         databaseReference.child("address").child(String.valueOf(user.getKey())).setValue(address);
+        return address;
     }
 }
 
