@@ -2,12 +2,12 @@ package com.example.babycare.sign_in;
 
 import android.content.Intent;
 import android.util.Log;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.babycare.HomePage;
+import com.example.babycare.home_page.HomePageActivity;
 import com.example.babycare.R;
+import com.example.babycare.sing_up.SignUp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,20 +19,14 @@ public class GoogleSignInActivity extends AppCompatActivity {
 
    public void updateUI(FirebaseUser user) {
         if (user != null) {
-            String displayName = user.getDisplayName();
-            String email = user.getEmail();
-            TextView displayNameTextView = findViewById(R.id.firstNameDisplay);
-            TextView emailTextView = findViewById(R.id.emailDisplay);
-            displayNameTextView.setText(displayName);
-            emailTextView.setText(email);
-            Intent userInformationIntent = new Intent(this, HomePage.class);
-            startActivity(userInformationIntent);
-            setContentView(R.layout.user_information_page);
+            Intent homePageIntent = new Intent(this, HomePageActivity.class);
+            startActivity(homePageIntent);
+            setContentView(R.layout.home_page);
             finish();
         } else {
             setContentView(R.layout.sign_up);
-            Intent userInformationIntent = new Intent(this, GoogleSignInActivity.class);
-            startActivity(userInformationIntent);
+            Intent signUpIntent = new Intent(this, SignUp.class);
+            startActivity(signUpIntent);
         }
     }
     public void firebaseAuthWithGoogle(String idToken) {

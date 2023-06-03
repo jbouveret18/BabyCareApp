@@ -1,19 +1,7 @@
 package com.example.babycare.data;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
-import android.content.Intent;
-
-import androidx.annotation.NonNull;
-
-import com.example.babycare.HomePage;
-import com.example.babycare.sign_in.ManualSignInActivity;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

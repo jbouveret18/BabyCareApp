@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.babycare.HomePage;
+import com.example.babycare.home_page.HomePageActivity;
 import com.example.babycare.R;
 import com.example.babycare.data.Database;
 import com.example.babycare.data.User;
@@ -32,7 +32,7 @@ public class ManualSignInActivity extends AppCompatActivity {
 
  EditText signInEmail = findViewById(R.id.signInEmailInput);
  EditText passwordInput = findViewById(R.id.SignInPasswordInput);
- Intent homePageIntent = new Intent(ManualSignInActivity.this, HomePage.class);
+ Intent homePageIntent = new Intent(ManualSignInActivity.this, HomePageActivity.class);
  Intent signUpIntent = new Intent(ManualSignInActivity.this, SignUp.class);
  public boolean fieldIsEmpty(Object input){
      return input == null;
