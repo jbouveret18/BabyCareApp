@@ -1,4 +1,4 @@
-package com.example.babycare;
+package com.example.babycare.home_page;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.babycare.R;
 import com.example.babycare.sign_in.GoogleSignInActivity;
 import com.example.babycare.sign_in.ManualSignInActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
