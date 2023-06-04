@@ -32,14 +32,6 @@ public class SignUp extends AppCompatActivity {
     EditText postalCodeInput = findViewById(R.id.postalCodeInput);
     Button finishSignUp = findViewById(R.id.FinishSignUp);
     Button skip = findViewById(R.id.skip);
-    EditText firstNameDisplay = findViewById(R.id.firstNameDisplay);
-    EditText lastNameDisplay = findViewById(R.id.lastNameDisplay);
-    EditText emailDisplay = findViewById(R.id.emailDisplay);
-    EditText birthdayDisplay = findViewById(R.id.birthdayDisplay);
-    EditText countryDisplay = findViewById(R.id.countryDisplay);
-    EditText regionDisplay = findViewById(R.id.regionDisplay);
-    EditText streetDisplay = findViewById(R.id.streetDisplay);
-    EditText postalCodeDisplay = findViewById(R.id.postalCodeDisplay);
 
     public boolean passwordEnteredProperly(String password, String passwordVerifyInput){
         return password.equals(passwordVerifyInput);
@@ -112,15 +104,9 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if(snapshot.exists()){
-                        firstNameDisplay.setText(firstName);
-                        lastNameDisplay.setText(lastName);
-                        emailDisplay.setText(email);
-                        birthdayDisplay.setText(birthdayUnformatted);
+
                     } else {
-                        firstNameDisplay.setText("Not Found");
-                        lastNameDisplay.setText("Not Found");
-                        emailDisplay.setText("Not Found");
-                        birthdayDisplay.setText("Not Found");
+
                     }
                 }
                 @Override
@@ -133,15 +119,9 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists()) {
-                        countryDisplay.setText(country);
-                        regionDisplay.setText(region);
-                        streetDisplay.setText(street);
-                        postalCodeDisplay.setText(postalCode);
+
                     }
-                    countryDisplay.setText("Not Found");
-                    regionDisplay.setText("Not Found");
-                    streetDisplay.setText("Not Found");
-                    postalCodeDisplay.setText("Not Found");
+
                 }
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
