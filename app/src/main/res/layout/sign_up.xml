@@ -97,6 +97,13 @@
                 android:textColorHint="#8D6E63"
                 tools:ignore="MissingConstraints,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
+            <Switch
+                android:id="@+id/isDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:text="Doctor" />
+
             <Button
                 android:id="@+id/addressPage"
                 android:layout_width="match_parent"

@@ -3,23 +3,21 @@ package com.example.babycare.sing_up;
 import static com.example.babycare.data.Database.convertDateIntoString;
 import static com.example.babycare.sing_up.AddressPage.getAllCountries;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.R;
 import com.example.babycare.data.Database;
 import com.example.babycare.data.User;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
+import com.example.babycare.home_page.HomePageActivity;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -27,7 +25,9 @@ import java.util.Date;
 import java.util.List;
 
 public class SignUp extends AppCompatActivity {
+    Intent homePageIntent = new Intent(SignUp.this, HomePageActivity.class);
     Database database = new Database();
+    Switch isDoctorSwitch = findViewById(R.id.isDoctor);
     AutoCompleteTextView countryInput = findViewById(R.id.countries_list);
     List<String> countries = getAllCountries();
     ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, countries);
@@ -51,9 +51,8 @@ public class SignUp extends AppCompatActivity {
 
     public void displayAlert(boolean check){
         if(check){
-            return;
+            Toast.makeText(getApplicationContext(), "Fields not complete", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(getApplicationContext(), "Fields not complete", Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +66,7 @@ public class SignUp extends AppCompatActivity {
         EditText passwordVerifyInput = findViewById(R.id.passwordVerifyInput);
         Button addressPage = findViewById(R.id.addressPage);
         addressPage.setOnClickListener(view -> {
-            String country = countryInput.getText().toString();
-            countryInput.setAdapter(adapter);
-            String region = regionInput.getText().toString();
-            int postalCode = Integer.parseInt(postalCodeInput.getText().toString());
-            String street = streetInput.getText().toString();
-            setContentView(R.layout.sign_up);
+            User user;
             String firstName = firstNameInput.getText().toString();
             String lastName = lastNameInput.getText().toString();
             String birthdayUnformatted = birthdayInput.getText().toString();
@@ -94,45 +88,35 @@ public class SignUp extends AppCompatActivity {
             userInformation.add(birthdayUnformatted);
             userInformation.add(password);
             userInformation.add(passwordVerify);
-            List<Object> addressInformation = new ArrayList<>();
-            addressInformation.add(country);
-            addressInformation.add(region);
-            addressInformation.add(street);
-            addressInformation.add(postalCode);
             if(!listIsNotComplete(userInformation) && passwordEnteredProperly(password,passwordVerify)){
-                database.writeNewUser(firstName,lastName,email, birthday,key, password);
+                if(isDoctorSwitch.isActivated()){
+                    user = database.writeNewUser(true,key,firstName,lastName,email,birthday,password);
+                } else {
+                    user = database.writeNewUser(false,key,firstName,lastName,email,birthday,password);
+                }
                 setContentView(R.layout.adress);
+                finishSignUp.setOnClickListener(view1 -> {
+                    String country = countryInput.getText().toString();
+                    countryInput.setAdapter(adapter);
+                    String region = regionInput.getText().toString();
+                    int postalCode = Integer.parseInt(postalCodeInput.getText().toString());
+                    String street = streetInput.getText().toString();
+                    List<Object> addressInformation = new ArrayList<>();
+                    addressInformation.add(country);
+                    addressInformation.add(region);
+                    addressInformation.add(street);
+                    addressInformation.add(postalCode);
+                    if(!listIsNotComplete(addressInformation)){
+                        database.writeUserAddress(user,region,country,street,postalCode);
+                        startActivity(homePageIntent);
+                    } else {
+                        displayAlert(listIsNotComplete(addressInformation));
+                    }
+                });
+                skip.setOnClickListener(view12 -> startActivity(homePageIntent));
             } else {
                 displayAlert(listIsNotComplete(userInformation));
             }
-            database.databaseReference.child("user").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if(snapshot.exists()){
-
-                    } else {
-
-                    }
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    //TODO
-                }
-            });
-
-            database.databaseReference.child("address").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.exists()) {
-
-                    }
-
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
         });
     }
 }

@@ -15,8 +15,8 @@ public class Database {
     }
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     public DatabaseReference databaseReference = firebaseDatabase.getReference();
-    public User writeNewUser(String firstName, String lastName, String email, Date birthday,long key, String password) {
-        User user = new User(key, firstName,lastName,email,birthday, password);
+    public User writeNewUser(boolean doctor, long key, String firstName, String lastName, String email, Date birthday, String password) {
+        User user = new User(doctor,key,firstName,lastName,email,birthday,password);
         databaseReference.child("user").child(String.valueOf(key)).setValue(user);
         return user;
     }
