@@ -23,10 +23,22 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".sign_in.GoogleSignInActivity"
+            android:exported="true" />
+        <activity android:name=".home_page.HomePageActivity"
+            android:exported="true"/>
+        <activity android:name=".map.MapActivity"
+            android:exported="true"/>
+        <activity android:name=".sing_up.ManualSignInActivity"
+            android:exported="true"/>
+        <activity android:name=".sing_up.SignUp"
+            android:exported="true"/>
+        <activity android:name=".sing_up.AddressPage"
+            android:exported="true"/>
     </application>
 
 </manifest>

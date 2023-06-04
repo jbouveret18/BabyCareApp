@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">BabyCare</string>
-    <string name="default_web_client_id">1:671691850139:android:099809e1026fb67866613e</string>
+    <string name="default_web_client_id">671691850139-ornu8sbn880odkglkv8t198tr6rrcrmf.apps.googleusercontent.com</string>
     <string name="email">Email :</string>
     <string name="enter_email">Enter email</string>
     <string name="name">Name :</string>

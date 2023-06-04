@@ -9,7 +9,7 @@ public class Address extends User {
     int postalCode;
 
 
-    public Address(long key, String firstName, String lastName, String email, Date birthday, String userPassword, String region, String country, String password, int postalCode) {
-        super(key, firstName, lastName, email, birthday, password);
+    public Address(boolean doctor,long key, String firstName, String lastName, String email, Date birthday, String userPassword, String region, String country, String password, int postalCode) {
+        super(doctor,key, firstName, lastName, email, birthday, password);
     }
 }

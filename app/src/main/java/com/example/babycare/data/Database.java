@@ -21,7 +21,7 @@ public class Database {
         return user;
     }
     public Address writeUserAddress(User user,String region, String country,String street, int postalCode){
-        Address address = new Address(user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(),user.getPassword(),region,country,street,postalCode);
+        Address address = new Address(user.isDoctor(), user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(),user.getPassword(),region,country,street,postalCode);
         databaseReference.child("address").child(String.valueOf(user.getKey())).setValue(address);
         return address;
     }

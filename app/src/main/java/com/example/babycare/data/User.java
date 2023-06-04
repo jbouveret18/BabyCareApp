@@ -21,12 +21,8 @@ public class User {
     public Date birthday;
 
     public String password;
-    public static boolean isDoctor() {
+    public boolean isDoctor() {
         return doctor;
-    }
-
-    public void setDoctor(boolean doctor) {
-        this.doctor = doctor;
     }
 
     public long getKey() {
