@@ -6,9 +6,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.babycare.home_page.HomePageActivity;
 import com.example.babycare.R;
-import com.example.babycare.sing_up.SignUp;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -46,13 +44,9 @@ public class GoogleSignInActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser user) {
         if (user != null) {
-            Intent homePageIntent = new Intent(getApplicationContext(), HomePageActivity.class);
-            startActivity(homePageIntent);
-            finish();
+             Log.e("Success", "Login : success");
         } else {
-            Intent signUpIntent = new Intent(getApplicationContext(), SignUp.class);
-            startActivity(signUpIntent);
-            finish();
+            Log.e("Success", "SignUp : go Sign up");
         }
     }
 

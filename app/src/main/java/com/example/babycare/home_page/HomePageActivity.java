@@ -12,11 +12,13 @@ import com.example.babycare.R;
 import com.example.babycare.map.MapActivity;
 
 public class HomePageActivity extends AppCompatActivity {
-    Button openMap = findViewById(R.id.openMap);
-    Intent openMapIntent = new Intent(HomePageActivity.this, MapActivity.class);
+    Button openMap;
+    Intent openMapIntent;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        openMap = findViewById(R.id.openMap);
+        openMapIntent = new Intent(HomePageActivity.this, MapActivity.class);
         setContentView(R.layout.home_page);
         openMap.setOnClickListener(view -> startActivity(openMapIntent));
     }

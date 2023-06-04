@@ -43,7 +43,7 @@ public class ManualSignInActivity extends AppCompatActivity {
         signInEmail = findViewById(R.id.signInEmailInput);
         passwordInput = findViewById(R.id.SignInPasswordInput);
         homePageIntent = new Intent(getApplicationContext(), HomePageActivity.class);
-        signUpIntent = new Intent(getApplicationContext(), com.example.babycare.sign_up.SignUp.class);
+        signUpIntent = new Intent(getApplicationContext(), SignUp.class);
 
 
         loginButton.setOnClickListener(view -> {

@@ -33,7 +33,7 @@
             android:exported="true"/>
         <activity android:name=".map.MapActivity"
             android:exported="true"/>
-        <activity android:name=".sing_up.ManualSignInActivity"
+        <activity android:name=".sign_in.ManualSignInActivity"
             android:exported="true"/>
         <activity android:name=".sing_up.SignUp"
             android:exported="true"/>

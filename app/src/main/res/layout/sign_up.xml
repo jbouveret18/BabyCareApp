@@ -61,9 +61,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
-            android:autofillHints=""
+            android:autofillHints="Enter Birthday (dd-mm-yyyy)"
             android:hint="@string/enter_birthday"
             android:inputType="datetime"
+            android:maxLength="10"
+            android:digits="0123456789-"
+            android:imeOptions="actionDone"
             android:minHeight="48dp"
             android:textColorHint="#8D6E63"
             tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
