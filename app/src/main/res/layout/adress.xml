@@ -6,176 +6,178 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/AddressTitleText"
-        android:layout_width="207dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="46dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:gravity="center"
-        android:text="@string/adress"
-        app:layout_constraintBottom_toTopOf="@+id/countries_list"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/CountryText"
-        android:layout_width="98dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginBottom="25dp"
-        android:gravity="center"
-        android:text="@string/country_of_residence"
-        app:layout_constraintBottom_toTopOf="@+id/RegionText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints,TextSizeCheck" />
+        <ImageView
+            android:layout_width="228dp"
+            android:layout_height="215dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/circle_gradient"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/logo" />
 
-    <AutoCompleteTextView
-        android:id="@+id/countries_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="18dp"
-        android:dropDownHeight="100dp"
-        android:ems="10"
-        android:hint="@string/country"
-        android:minHeight="48dp"
-        android:textColorHint="#8D6E63"
-        app:layout_constraintBottom_toTopOf="@+id/region_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/CountryText"
-        app:layout_constraintTop_toBottomOf="@+id/AddressTitleText"
-        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/AddressTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:text="@string/adress"
+            tools:ignore="MissingConstraints"
+            android:layout_marginBottom="30dp"/>
 
-        <requestFocus />
-    </AutoCompleteTextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/RegionText"
-        android:layout_width="98dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="49dp"
-        android:gravity="center"
-        android:text="@string/region"
-        app:layout_constraintBottom_toTopOf="@+id/StreetText"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/CountryText"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/country_of_residence"
+                tools:ignore="MissingConstraints,TextSizeCheck" />
 
+            <AutoCompleteTextView
+                android:id="@+id/countries_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:dropDownHeight="100dp"
+                android:ems="10"
+                android:hint="@string/country"
+                android:minHeight="48dp"
+                android:textColorHint="#8D6E63"
+                tools:ignore="MissingConstraints">
 
-    <AutoCompleteTextView
-        android:id="@+id/region_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="40dp"
-        android:dropDownHeight="100dp"
-        android:ems="10"
-        android:hint="@string/region_list"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/streetInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/RegionText"
-        tools:ignore="MissingConstraints">
+                <requestFocus />
+            </AutoCompleteTextView>
 
-        <requestFocus />
-    </AutoCompleteTextView>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/StreetText"
-        android:layout_width="98dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="41dp"
-        android:gravity="center"
-        android:text="@string/street"
-        app:layout_constraintBottom_toTopOf="@+id/PostalCodeText"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp">
 
-    <EditText
-        android:id="@+id/streetInput"
-        android:layout_width="199dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="34dp"
-        android:autofillHints=""
-        android:hint="@string/enter_your_street"
-        android:inputType="text"
-        android:textColorHint="#8D6E63"
-        app:layout_constraintBottom_toTopOf="@+id/postalCodeInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/StreetText"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/RegionText"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/region"
+                tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/PostalCodeText"
-        android:layout_width="98dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="345dp"
-        android:gravity="center"
-        android:text="@string/postal_code"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,TextSizeCheck" />
+            <AutoCompleteTextView
+                android:id="@+id/region_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:dropDownHeight="100dp"
+                android:ems="10"
+                android:hint="@string/region_list"
+                android:minHeight="48dp"
+                tools:ignore="MissingConstraints">
 
-    <EditText
-        android:id="@+id/postalCodeInput"
-        android:layout_width="199dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="206dp"
-        android:autofillHints=""
-        android:hint="@string/enter_postal_code"
-        android:inputType="textPostalAddress"
-        android:textColorHint="#8D6E63"
-        app:layout_constraintBottom_toTopOf="@+id/FinishSignUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/PostalCodeText"
-        tools:ignore="MissingConstraints" />
+                <requestFocus />
+            </AutoCompleteTextView>
 
-    <Button
-        android:id="@+id/FinishSignUp"
-        android:layout_width="142dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="84dp"
-        android:gravity="center"
-        android:text="@string/finish"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="210dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="87dp"
-        android:text="Skip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/FinishSignUp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PostalCodeText"
-        tools:ignore="DuplicateIds" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:id="@+id/StreetText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/street"
+                tools:ignore="MissingConstraints"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/streetInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/enter_your_street"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColorHint="#8D6E63"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/PostalCodeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/postal_code"
+                tools:ignore="MissingConstraints,TextSizeCheck"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/postalCodeInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/enter_postal_code"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#8D6E63"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/FinishSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/finish"
+                tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skip"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
