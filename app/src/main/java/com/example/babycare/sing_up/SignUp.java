@@ -1,8 +1,10 @@
 package com.example.babycare.sing_up;
 
 import static com.example.babycare.data.Database.convertDateIntoString;
+import static com.example.babycare.sing_up.AddressPage.getAllCountries;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +29,8 @@ import java.util.List;
 public class SignUp extends AppCompatActivity {
     Database database = new Database();
     AutoCompleteTextView countryInput = findViewById(R.id.countries_list);
+    List<String> countries = getAllCountries();
+    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, countries);
     AutoCompleteTextView regionInput = findViewById(R.id.region_list);
     EditText streetInput = findViewById(R.id.streetInput);
     EditText postalCodeInput = findViewById(R.id.postalCodeInput);
@@ -64,6 +68,7 @@ public class SignUp extends AppCompatActivity {
         Button addressPage = findViewById(R.id.addressPage);
         addressPage.setOnClickListener(view -> {
             String country = countryInput.getText().toString();
+            countryInput.setAdapter(adapter);
             String region = regionInput.getText().toString();
             int postalCode = Integer.parseInt(postalCodeInput.getText().toString());
             String street = streetInput.getText().toString();
