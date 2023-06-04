@@ -28,14 +28,7 @@ public class SignUp extends AppCompatActivity {
     Intent homePageIntent;
     Database database;
     Switch isDoctorSwitch;
-    AutoCompleteTextView countryInput;
-    List<String> countries;
-    ArrayAdapter<String> adapter;
-    AutoCompleteTextView regionInput;
-    EditText streetInput;
-    EditText postalCodeInput;
-    Button finishSignUp;
-    Button skip;
+
 
     public boolean passwordEnteredProperly(String password, String passwordVerifyInput) {
         return password.equals(passwordVerifyInput);
@@ -101,31 +94,6 @@ public class SignUp extends AppCompatActivity {
                     user = database.writeNewUser(true, key, firstName, lastName, email, birthday, password);
                 } else {
                     user = database.writeNewUser(false, key, firstName, lastName, email, birthday, password);
-                }
-                setContentView(R.layout.adress);
-                countryInput = findViewById(R.id.countries_list);
-                countries = getAllCountries();
-                adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, countries);
-                regionInput = findViewById(R.id.region_list);
-                streetInput = findViewById(R.id.streetInput);
-                postalCodeInput = findViewById(R.id.postalCodeInput);
-                finishSignUp = findViewById(R.id.FinishSignUp);
-                skip = findViewById(R.id.skip);
-                String country = countryInput.getText().toString();
-                countryInput.setAdapter(adapter);
-                String region = regionInput.getText().toString();
-                int postalCode = Integer.parseInt(postalCodeInput.getText().toString());
-                String street = streetInput.getText().toString();
-                List<Object> addressInformation = new ArrayList<>();
-                addressInformation.add(country);
-                addressInformation.add(region);
-                addressInformation.add(street);
-                addressInformation.add(postalCode);
-                if (!listIsNotComplete(addressInformation)) {
-                    database.writeUserAddress(user, region, country, street, postalCode);
-                    startActivity(homePageIntent);
-                } else {
-                    displayAlert(listIsNotComplete(addressInformation));
                 }
             } else {
                 displayAlert(listIsNotComplete(userInformation));
