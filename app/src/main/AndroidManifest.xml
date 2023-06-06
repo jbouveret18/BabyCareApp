@@ -19,7 +19,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAAplDyjkp5fjxbPscXylsYsjpXKVJDqKk" />
         <activity
-            android:name=".home_page.MainActivity"
+            android:name=".welcome.Welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
