@@ -5,14 +5,15 @@
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-<gradient
-
-    android:type="linear"
-    android:startColor="#4D69CA"
-    android:endColor="#FDAFC6" />
+    <gradient
+        android:type="linear"
+        android:startColor="#804D69CA"
+        android:angle="-90"
+        android:endColor="#80FDAFC6" />
 
     <corners android:radius="500dp" />
 
     <stroke
         android:width="0dip" />
+
 </shape>

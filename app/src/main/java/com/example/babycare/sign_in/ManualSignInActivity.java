@@ -14,6 +14,7 @@ import com.example.babycare.home_page.HomePageActivity;
 import com.example.babycare.R;
 import com.example.babycare.data.Database;
 import com.example.babycare.data.User;
+import com.example.babycare.home_page.MainActivity;
 import com.example.babycare.sing_up.SignUp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +25,7 @@ public class ManualSignInActivity extends AppCompatActivity {
     private Database database;
     private Button loginButton;
     private Button resetPasswordButton;
+    private Button backButton;
     private Button confirmResetPasswordButton;
     private EditText newPasswordReset;
     private EditText newEmail;
@@ -33,6 +35,8 @@ public class ManualSignInActivity extends AppCompatActivity {
     private Intent homePageIntent;
     private Intent signUpIntent;
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,7 @@ public class ManualSignInActivity extends AppCompatActivity {
         database = new Database();
         loginButton = findViewById(R.id.loginButton);
         resetPasswordButton = findViewById(R.id.resetPasswordButton);
+        backButton = findViewById(R.id.Back);
         signInEmail = findViewById(R.id.signInEmailInput);
         passwordInput = findViewById(R.id.SignInPasswordInput);
         homePageIntent = new Intent(getApplicationContext(), HomePageActivity.class);
@@ -73,6 +78,12 @@ public class ManualSignInActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(getApplicationContext(), "Empty fields", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        backButton.setOnClickListener(v -> {
+
+            Intent backIntent = new Intent(ManualSignInActivity.this, MainActivity.class);
+            startActivity(backIntent);
         });
     }
 

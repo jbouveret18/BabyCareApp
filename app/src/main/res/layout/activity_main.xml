@@ -8,63 +8,177 @@
     tools:context=".home_page.MainActivity">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/circle_gradient"
+        android:contentDescription="@string/todo"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/circle_gradient"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/logo" />
+    <!--Google sign in-->
 
-        <Button
-            android:id="@+id/Google"
-            android:layout_width="240dp"
-            android:layout_height="72dp"
-            android:contentDescription="@string/app_name"
-            android:gravity="center"
-            android:text="Sign in with google"
-            tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/SignIn"
-            android:layout_width="240dp"
-            android:layout_height="72dp"
-            android:contentDescription="@string/app_name"
-            android:gravity="center"
-            android:text="Sign in"
-            tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/SIGN_IN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="SIGN IN"
+        android:textColor="#979797"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        <Button
-            android:id="@+id/SignUp"
-            android:layout_width="240dp"
-            android:layout_height="72dp"
-            android:contentDescription="@string/app_name"
-            android:gravity="center"
-            android:text="Sign up"
+    <Button
+        android:id="@+id/Google"
+        android:layout_width="149dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_white_button"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:text="Continue with Google"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/SIGN_IN"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/SIGN_IN"
+        app:layout_constraintTop_toBottomOf="@+id/SIGN_IN"
+        tools:ignore="MissingConstraints" />
 
-            tools:ignore="MissingConstraints, DuplicateSpeakableTextCheck" />
+    <ImageView
+        android:layout_width="43dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/google_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/Google"
+        app:layout_constraintEnd_toStartOf="@+id/Google"
+        app:layout_constraintTop_toTopOf="@+id/Google" />
 
-        <Button
-            android:id="@+id/About"
-            android:layout_width="240dp"
-            android:layout_height="72dp"
-            android:contentDescription="@string/app_name"
-            android:gravity="center"
-        android:text="About"
-            tools:ignore="MissingConstraints" />
+    <!--End Google-->
 
-    </LinearLayout>
+    <!--Facebook sign in-->
+
+    <Button
+        android:id="@+id/Facebook"
+        android:layout_width="163dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_white_button"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:text="Continue with Facebook"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/Google"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Google"
+        app:layout_constraintTop_toBottomOf="@+id/Google"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="43dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/facebook_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/Facebook"
+        app:layout_constraintEnd_toStartOf="@+id/Facebook"
+        app:layout_constraintTop_toTopOf="@+id/Facebook" />
+
+    <!--End Facebook-->
+
+    <!--Apple sign in-->
+
+    <Button
+        android:id="@+id/Apple"
+        android:layout_width="149dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_white_button"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:text="Continue with Apple"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/Facebook"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Facebook"
+        app:layout_constraintTop_toBottomOf="@+id/Facebook"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="43dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/apple_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/Apple"
+        app:layout_constraintEnd_toStartOf="@+id/Apple"
+        app:layout_constraintTop_toTopOf="@+id/Apple" />
+
+    <!--End Apple-->
+
+    <Button
+        android:id="@+id/SignUp"
+        android:layout_width="226dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round_sign_up_email"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:text="Sign up with Email"
+        android:textAllCaps="false"
+        android:textColorLink="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/Apple"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="@+id/Apple"
+        app:layout_constraintTop_toBottomOf="@+id/Apple"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/SignIn"
+        android:layout_width="91dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_white_button"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="#C03CC5"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/SignUp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/SignUp"
+        app:layout_constraintTop_toBottomOf="@+id/SignUp"
+        tools:ignore="MissingConstraints, DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Already joined ?"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/SignIn"
+        app:layout_constraintEnd_toStartOf="@+id/SignIn"
+        app:layout_constraintTop_toBottomOf="@+id/SignUp"
+        app:layout_constraintVertical_bias="0.848" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--</selector>-->
+
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+
+        android:type="linear"
+        android:startColor="#4D69CA"
+        android:endColor="#FDAFC6" />
+        <!-- Set your desired button background color here -->
+        <corners android:radius="36dp" /> <!-- Adjust the radius to make the button more or less round -->
+    </shape>

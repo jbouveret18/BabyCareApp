@@ -26,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".home_page.MainActivity"
+            android:exported="true"/>
         <activity
             android:name=".sign_in.GoogleSignInActivity"
             android:exported="true" />
