@@ -18,31 +18,14 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAAplDyjkp5fjxbPscXylsYsjpXKVJDqKk" />
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-
-        <!--First page we see when opening the application-->
-
         <activity
-            android:name=".dashboard.Dashboard"
+            android:name=".welcome.Welcome"
             android:exported="true">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- We need to declare every page here -->
-
-<!--        <activity android:name=".Dashboard.Dashboard"-->
-<!--            android:exported="true">-->
-<!--        </activity>-->
-
-
-
         <activity android:name=".home_page.MainActivity"
             android:exported="true"/>
         <activity

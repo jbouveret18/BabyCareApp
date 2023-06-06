@@ -18,10 +18,8 @@ public class HomePageActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
-
         openMap = findViewById(R.id.openMap);
         openMapIntent = new Intent(HomePageActivity.this, MapActivity.class);
-        setContentView(R.layout.home_page);
         openMap.setOnClickListener(view -> startActivity(openMapIntent));
     }
 }
