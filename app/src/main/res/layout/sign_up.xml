@@ -6,8 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".sing_up.SignUp"
+    android:background="@color/white"
     tools:layout_editor_absoluteX="-28dp"
-    tools:layout_editor_absoluteY="-249dp">
+    tools:layout_editor_absoluteY="-249dp"
+    android:orientation="vertical">
 
 
     <LinearLayout
@@ -20,16 +22,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Sign Up"
+            android:textColor="#D60BD2"
+            android:textColorHint="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
+
         <EditText
             android:id="@+id/firstNameInput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
             android:autofillHints=""
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="@string/enter_name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColorHint="#8D6E63"
             tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
 
         <EditText
@@ -38,10 +55,11 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
             android:autofillHints=""
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="@string/enter_last_name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColorHint="#8D6E63"
             tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
 
         <EditText
@@ -50,10 +68,11 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
             android:autofillHints=""
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="@string/enter_email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
-            android:textColorHint="#8D6E63"
             tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
 
         <EditText
@@ -65,10 +84,11 @@
             android:hint="@string/enter_birthday"
             android:inputType="datetime"
             android:maxLength="10"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:digits="0123456789-"
             android:imeOptions="actionDone"
             android:minHeight="48dp"
-            android:textColorHint="#8D6E63"
             tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
 
         <EditText
@@ -77,10 +97,11 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
             android:autofillHints=""
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="@string/password"
             android:inputType="textVisiblePassword"
             android:minHeight="48dp"
-            android:textColorHint="#8D6E63"
             tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck,VisualLintTextFieldSize" />
 
         <EditText
@@ -89,27 +110,35 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="50dp"
             android:autofillHints=""
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:hint="@string/password"
             android:inputType="textVisiblePassword"
-            android:textColorHint="#8D6E63"
             tools:ignore="MissingConstraints,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
         <Switch
             android:id="@+id/isDoctor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="112dp"
+            android:layout_height="36dp"
             android:layout_marginBottom="50dp"
             android:minHeight="48dp"
             android:text="Doctor"
+            android:textAllCaps="false"
+            android:textSize="16sp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Button
             android:id="@+id/addressPage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_sign_up_email"
             android:clickable="true"
+            android:layout_marginBottom="15dp"
             android:gravity="center"
             android:text="@string/next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck,VisualLintButtonSize" />
 
     </LinearLayout>

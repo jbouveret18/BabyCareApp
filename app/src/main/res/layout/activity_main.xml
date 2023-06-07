@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".home_page.MainActivity">
+    tools:context=".home_page.MainActivity"
+    android:orientation="vertical">
 
 
     <ImageView
@@ -142,6 +143,7 @@
         android:text="Sign up with Email"
         android:textAllCaps="false"
         android:textColorLink="@color/white"
+        android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/Apple"
         app:layout_constraintHorizontal_bias="0.584"
