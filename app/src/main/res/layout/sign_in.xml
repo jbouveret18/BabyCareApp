@@ -84,16 +84,18 @@
                 android:layout_height="43dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/black"
+                android:textAllCaps="false"
                 android:background="@drawable/round_white_button"
                 android:text="Reset Password" />
 
             <Button
 
                 android:id="@+id/loginButton"
-                android:background="@drawable/round_white_button"
+                android:background="@drawable/round_sign_up_email"
                 android:layout_width="130dp"
                 android:layout_height="43dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
                 android:text="Log in" />
 
         </LinearLayout>
@@ -110,6 +112,7 @@
             android:layout_height="43dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/round_white_button"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:text="Back" />
 

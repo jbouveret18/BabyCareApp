@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private Button signUpButton;
     private Button googleSignInButton;
     private Button signInButton;
+    private Button facebookSignInButton;
+    private Button appleSignInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         signUpButton = findViewById(R.id.SignUp);
         googleSignInButton = findViewById(R.id.Google);
         signInButton = findViewById(R.id.SignIn);
+        facebookSignInButton = findViewById(R.id.Facebook);
+        appleSignInButton = findViewById(R.id.Apple);
 
         googleSignInButton.setOnClickListener(v -> {
             GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -44,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
             GoogleSignInClient client = GoogleSignIn.getClient(this, options);
             Intent intent = client.getSignInIntent();
             startActivityForResult(intent, RC_SIGN_IN);
+        });
+
+        facebookSignInButton.setOnClickListener(v -> {
+            Intent homePageIntent1 = new Intent(MainActivity.this, HomePageActivity.class);
+            startActivity(homePageIntent1);
+        });
+
+        appleSignInButton.setOnClickListener(v -> {
+            Intent homePageIntent2 = new Intent(MainActivity.this, HomePageActivity.class);
+            startActivity(homePageIntent2);
         });
 
         signUpButton.setOnClickListener(v -> {
