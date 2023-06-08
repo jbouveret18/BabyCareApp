@@ -75,21 +75,6 @@
             android:minHeight="48dp"
             tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
 
-        <EditText
-            android:id="@+id/birthdayInput"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="30dp"
-            android:autofillHints="Enter Birthday (dd-mm-yyyy)"
-            android:hint="@string/enter_birthday"
-            android:inputType="datetime"
-            android:maxLength="10"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:digits="0123456789-"
-            android:imeOptions="actionDone"
-            android:minHeight="48dp"
-            tools:ignore="MissingConstraints,VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/passwordInput"
@@ -119,7 +104,7 @@
         <Switch
             android:id="@+id/isDoctor"
             android:layout_width="112dp"
-            android:layout_height="36dp"
+            android:layout_height="48dp"
             android:layout_marginBottom="50dp"
             android:minHeight="48dp"
             android:text="Doctor"
@@ -142,16 +127,15 @@
             tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck,VisualLintButtonSize" />
 
         <Button
-
-            android:id="@+id/Back"
+            android:id="@+id/backButtonSignUp"
             android:layout_width="130dp"
-            android:layout_height="43dp"
+            android:layout_height="48dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/round_white_button"
+            android:text="Back"
             android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:text="Back" />
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

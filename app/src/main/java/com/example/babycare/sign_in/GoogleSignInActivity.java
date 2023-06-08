@@ -7,6 +7,8 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.R;
+import com.example.babycare.dashboard.Dashboard;
+import com.example.babycare.sing_up.SignUp;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -25,7 +27,6 @@ public class GoogleSignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dashboard);
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -48,9 +49,9 @@ public class GoogleSignInActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser user) {
         if (user != null) {
-             Log.e("Success", "Login : success");
+             startActivity(new Intent(getApplicationContext(), Dashboard.class));
         } else {
-            Log.e("Success", "SignUp : go Sign up");
+            startActivity(new Intent(getApplicationContext(), SignUp.class));
         }
     }
 

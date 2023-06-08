@@ -44,7 +44,7 @@ public class ManualSignInActivity extends AppCompatActivity {
         database = new Database();
         loginButton = findViewById(R.id.loginButton);
         resetPasswordButton = findViewById(R.id.resetPasswordButton);
-        backButton = findViewById(R.id.Back);
+        backButton = findViewById(R.id.backButtonSignUp);
         signInEmail = findViewById(R.id.signInEmailInput);
         passwordInput = findViewById(R.id.SignInPasswordInput);
         homePageIntent = new Intent(getApplicationContext(), Dashboard.class);

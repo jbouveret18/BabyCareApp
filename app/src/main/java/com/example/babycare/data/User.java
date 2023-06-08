@@ -17,8 +17,7 @@ public class User {
     public final long key;
     public String firstName;
     public String lastName;
-    public String email;
-    public Date birthday;
+    public String email;;
 
     public String password;
     public boolean isDoctor() {
@@ -41,17 +40,13 @@ public class User {
         return email;
     }
 
-    public Date getBirthday() {
-        return birthday;
-    }
 
-    public User(boolean doctor, long key, String firstName, String lastName, String email, Date birthday, String password) {
+    public User(boolean doctor, long key, String firstName, String lastName, String email, String password) {
         this.doctor = doctor;
         this.key = key;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.birthday = birthday;
         this.password = password;
     }
 

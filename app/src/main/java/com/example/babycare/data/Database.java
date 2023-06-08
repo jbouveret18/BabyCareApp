@@ -15,13 +15,13 @@ public class Database {
     }
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     public DatabaseReference databaseReference = firebaseDatabase.getReference();
-    public User writeNewUser(boolean doctor, long key, String firstName, String lastName, String email, Date birthday, String password) {
-        User user = new User(doctor,key,firstName,lastName,email,birthday,password);
+    public User writeNewUser(boolean doctor, long key, String firstName, String lastName, String email, String password) {
+        User user = new User(doctor,key,firstName,lastName,email,password);
         databaseReference.child("user").child(String.valueOf(key)).setValue(user);
         return user;
     }
     public Address writeUserAddress(User user,String region, String country,String street, int postalCode){
-        Address address = new Address(user.isDoctor(), user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(),user.getPassword(),region,country,street,postalCode);
+        Address address = new Address(user.isDoctor(), user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(),user.getPassword(),region,country,street,postalCode);
         databaseReference.child("address").child(String.valueOf(user.getKey())).setValue(address);
         return address;
     }
