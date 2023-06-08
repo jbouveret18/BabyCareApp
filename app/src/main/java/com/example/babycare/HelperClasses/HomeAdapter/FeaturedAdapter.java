@@ -4,10 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import com.example.babycare.R;
 
@@ -38,6 +40,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
         holder.title.setText(featuredHelperClass.getTitle());
         holder.desc.setText(featuredHelperClass.getDescription());
 
+
     }
 
     @Override
@@ -50,6 +53,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
         ImageView image;
         TextView title, desc;
 
+
         public FeaturedViewHolder(@NonNull View itemView){
             super(itemView);
 
@@ -57,6 +61,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
             image = itemView.findViewById(R.id.featured_image);
             title = itemView.findViewById(R.id.featured_title);
             desc = itemView.findViewById(R.id.featured_description);
+
 
 
 
