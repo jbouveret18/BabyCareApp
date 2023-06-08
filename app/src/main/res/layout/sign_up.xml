@@ -109,7 +109,7 @@
             android:minHeight="48dp"
             android:text="Doctor"
             android:textAllCaps="false"
-            android:textSize="16sp"
+            android:textSize="20dp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <Button

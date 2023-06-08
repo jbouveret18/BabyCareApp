@@ -20,11 +20,12 @@ public class Database {
         databaseReference.child("user").child(String.valueOf(key)).setValue(user);
         return user;
     }
-    public Address writeUserAddress(User user,String region, String country,String street, int postalCode){
-        Address address = new Address(user.isDoctor(), user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(),user.getPassword(),region,country,street,postalCode);
+
+    public Address writeUserAddress(boolean doctor, long key, String firstName, String lastName, String email, String password, String region, String country, String street, int postalCode) {
+        User user = writeNewUser(doctor,key,firstName,lastName,email,password);
+        Address address = new Address(user.isDoctor(), user.getKey(), user.getFirstName(), user.getLastName(), user.getEmail(),user.getPassword(), region,country,street,postalCode);
         databaseReference.child("address").child(String.valueOf(user.getKey())).setValue(address);
         return address;
     }
-
 }
 

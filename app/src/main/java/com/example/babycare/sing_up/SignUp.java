@@ -34,6 +34,7 @@ public class SignUp extends AppCompatActivity {
     EditText lastNameInput;
     EditText emailInput;
     Button backButton;
+    static User user;
 
 
 
@@ -64,7 +65,6 @@ public class SignUp extends AppCompatActivity {
         addressPage = findViewById(R.id.addressPage);
         addressPage.setOnClickListener(view -> {
             database = new Database();
-            User user;
             isDoctorSwitch = findViewById(R.id.isDoctor);
             String firstName = firstNameInput.getText().toString();
             String lastName = lastNameInput.getText().toString();
@@ -74,10 +74,10 @@ public class SignUp extends AppCompatActivity {
             long key = User.generatePrimaryKey();
             if (isDoctorSwitch.isActivated()) {
                 user = database.writeNewUser(true, key, firstName, lastName, email, password);
-                startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                startActivity(new Intent(getApplicationContext(), AddressPage.class));
             } else {
                 user = database.writeNewUser(false, key, firstName, lastName, email, password);
-                startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                startActivity(new Intent(getApplicationContext(), AddressPage.class));
             }
             Log.e("Success","SignUp works");
         });

@@ -50,7 +50,7 @@
                 android:text="@string/country_of_residence"
                 tools:ignore="MissingConstraints,TextSizeCheck" />
 
-            <AutoCompleteTextView
+            <TextView
                 android:id="@+id/countries_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                 tools:ignore="MissingConstraints">
 
                 <requestFocus />
-            </AutoCompleteTextView>
+            </TextView>
 
         </LinearLayout>
 
