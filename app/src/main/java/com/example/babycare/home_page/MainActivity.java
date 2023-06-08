@@ -43,13 +43,7 @@ public class MainActivity extends AppCompatActivity {
         appleSignInButton = findViewById(R.id.Apple);
 
         googleSignInButton.setOnClickListener(v -> {
-            GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken(getString(R.string.default_web_client_id))
-                    .requestEmail()
-                    .build();
-            GoogleSignInClient client = GoogleSignIn.getClient(this, options);
-            Intent intent = client.getSignInIntent();
-            startActivityForResult(intent, RC_SIGN_IN);
+           startActivity(new Intent(getApplicationContext(),GoogleSignInActivity.class));
         });
 
         facebookSignInButton.setOnClickListener(v -> {

@@ -24,9 +24,7 @@
 
         <!--First page we see when opening the application-->
 
-<!--        <activity-->
-<!--            android:name=".dashboard.Dashboard"-->
-<!--            android:exported="true">-->
+
 
         <activity
             android:name=".welcome.Welcome"
@@ -54,6 +52,8 @@
         <activity android:name=".sing_up.SignUp"
             android:exported="true"/>
         <activity android:name=".sing_up.AddressPage"
+            android:exported="true"/>
+        <activity android:name=".dashboard.Dashboard"
             android:exported="true"/>
 
     </application>
