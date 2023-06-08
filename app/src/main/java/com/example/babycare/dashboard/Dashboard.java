@@ -1,10 +1,11 @@
 package com.example.babycare.dashboard;
 
 import android.annotation.SuppressLint;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.babycare.HelperClasses.HomeAdapter.FeaturedAdapter;
 import com.example.babycare.HelperClasses.HomeAdapter.FeaturedHelperClass;
 import com.example.babycare.R;
+import com.example.babycare.calendar.CalendarActivity;
+import com.example.babycare.map.MapActivity;
 
 import java.util.ArrayList;
 
@@ -22,6 +25,10 @@ public class Dashboard extends AppCompatActivity {
     RecyclerView featuredRecyclerMyProfil;
     RecyclerView featuredRecyclerCategories;
     RecyclerView.Adapter adapter, adapter2;
+    RelativeLayout openMap;
+    RelativeLayout calendarView;
+    Intent calendarIntent;
+    Intent openMapIntent;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -37,6 +44,20 @@ public class Dashboard extends AppCompatActivity {
         featuredRecyclerCategories = findViewById(R.id.featured_recycler_categories);
 
         featuredRecycler();
+        openMap = findViewById(R.id.openMap);
+        calendarView = findViewById(R.id.calendarView);
+        openMap.setOnClickListener(view -> {
+            openMapIntent = new Intent(getApplicationContext(), MapActivity.class);
+            setContentView(R.layout.map);
+        });
+        calendarView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calendarIntent = new Intent(getApplicationContext(), CalendarActivity.class);
+                startActivity(calendarIntent);
+            }
+        });
+
 //        featuredRecycler2();
 
     }

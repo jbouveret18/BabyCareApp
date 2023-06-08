@@ -8,8 +8,10 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.R;
+import com.example.babycare.dashboard.Dashboard;
 import com.example.babycare.sign_in.GoogleSignInActivity;
 import com.example.babycare.sign_in.ManualSignInActivity;
+import com.example.babycare.sing_up.SignUp;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -51,17 +53,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         facebookSignInButton.setOnClickListener(v -> {
-            Intent homePageIntent1 = new Intent(MainActivity.this, HomePageActivity.class);
+            Intent homePageIntent1 = new Intent(MainActivity.this, Dashboard.class);
             startActivity(homePageIntent1);
         });
 
         appleSignInButton.setOnClickListener(v -> {
-            Intent homePageIntent2 = new Intent(MainActivity.this, HomePageActivity.class);
+            Intent homePageIntent2 = new Intent(MainActivity.this, Dashboard.class);
             startActivity(homePageIntent2);
         });
 
         signUpButton.setOnClickListener(v -> {
-            Intent signUpIntent = new Intent(MainActivity.this, GoogleSignInActivity.class);
+            Intent signUpIntent = new Intent(MainActivity.this, SignUp.class);
             startActivity(signUpIntent);
         });
 
@@ -94,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             String email = account.getEmail();
             String firstName = account.getGivenName();
             String lastName = account.getFamilyName();
-            Intent homePage = new Intent(MainActivity.this,HomePageActivity.class);
+            Intent homePage = new Intent(MainActivity.this, Dashboard.class);
             startActivity(homePage);
             // Continue with your desired logic
         } else {

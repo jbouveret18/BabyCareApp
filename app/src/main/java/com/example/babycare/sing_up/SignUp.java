@@ -1,12 +1,9 @@
 package com.example.babycare.sing_up;
 
 import static com.example.babycare.data.Database.convertDateIntoString;
-import static com.example.babycare.sing_up.AddressPage.getAllCountries;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
@@ -15,9 +12,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.babycare.R;
+import com.example.babycare.dashboard.Dashboard;
 import com.example.babycare.data.Database;
 import com.example.babycare.data.User;
-import com.example.babycare.home_page.HomePageActivity;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -55,7 +52,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.sign_up);
 
         // Initialize views
-        homePageIntent = new Intent(SignUp.this, HomePageActivity.class);
+        homePageIntent = new Intent(SignUp.this, Dashboard.class);
         database = new Database();
         isDoctorSwitch = findViewById(R.id.isDoctor);
 

@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.babycare.home_page.HomePageActivity;
 import com.example.babycare.R;
+import com.example.babycare.dashboard.Dashboard;
 import com.example.babycare.data.Database;
 import com.example.babycare.data.User;
 import com.example.babycare.home_page.MainActivity;
@@ -47,7 +47,7 @@ public class ManualSignInActivity extends AppCompatActivity {
         backButton = findViewById(R.id.Back);
         signInEmail = findViewById(R.id.signInEmailInput);
         passwordInput = findViewById(R.id.SignInPasswordInput);
-        homePageIntent = new Intent(getApplicationContext(), HomePageActivity.class);
+        homePageIntent = new Intent(getApplicationContext(), Dashboard.class);
         signUpIntent = new Intent(getApplicationContext(), SignUp.class);
 
 

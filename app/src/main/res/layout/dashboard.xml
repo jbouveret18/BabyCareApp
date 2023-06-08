@@ -121,11 +121,13 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/calendarView"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="@drawable/card_calendar_shape"
                         android:elevation="8dp"
-                        android:layout_margin="10dp">
+                        android:layout_margin="10dp"
+                        android:clickable="true">
 
                         <ImageView
                             android:layout_width="30dp"
@@ -151,13 +153,16 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/openMap"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:background="@drawable/card_map_shape"
-                        android:elevation="8dp"
-                        android:layout_margin="10dp">
+                        android:clickable="true"
+                        android:elevation="8dp">
 
                         <ImageView
+                            android:id="@+id/map"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_centerInParent="true"
