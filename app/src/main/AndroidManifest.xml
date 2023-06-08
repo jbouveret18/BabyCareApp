@@ -24,8 +24,12 @@
 
         <!--First page we see when opening the application-->
 
+<!--        <activity-->
+<!--            android:name=".dashboard.Dashboard"-->
+<!--            android:exported="true">-->
+
         <activity
-            android:name=".dashboard.Dashboard"
+            android:name=".welcome.Welcome"
             android:exported="true">
 
 

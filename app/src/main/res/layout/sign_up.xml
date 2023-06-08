@@ -141,6 +141,18 @@
             android:textSize="24sp"
             tools:ignore="MissingConstraints,DuplicateSpeakableTextCheck,VisualLintButtonSize" />
 
+        <Button
+
+            android:id="@+id/Back"
+            android:layout_width="130dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_white_button"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:text="Back" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,8 @@ import com.example.babycare.R;
 import com.example.babycare.dashboard.Dashboard;
 import com.example.babycare.data.Database;
 import com.example.babycare.data.User;
+import com.example.babycare.home_page.MainActivity;
+import com.example.babycare.sign_in.ManualSignInActivity;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ import java.util.List;
 public class SignUp extends AppCompatActivity {
     Intent homePageIntent;
     Database database;
+
+    private Button backButton;
     Switch isDoctorSwitch;
 
 
@@ -55,6 +59,7 @@ public class SignUp extends AppCompatActivity {
         homePageIntent = new Intent(SignUp.this, Dashboard.class);
         database = new Database();
         isDoctorSwitch = findViewById(R.id.isDoctor);
+        backButton = findViewById(R.id.Back);
 
         EditText emailInput = findViewById(R.id.emailInput);
         EditText lastNameInput = findViewById(R.id.lastNameInput);
@@ -95,6 +100,13 @@ public class SignUp extends AppCompatActivity {
             } else {
                 displayAlert(listIsNotComplete(userInformation));
             }
+        });
+
+
+        backButton.setOnClickListener(v -> {
+
+            Intent backIntent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(backIntent);
         });
     }
 }
