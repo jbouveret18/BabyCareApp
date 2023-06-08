@@ -230,7 +230,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="60dp"
 
                         android:text="Articles"
                         android:textAllCaps="true"
@@ -241,8 +241,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-
-                        android:text="Discover here the newest available articles" />
+                        android:textColor="#2f2c2a"
+                        android:text="Discover here the latest available articles" />
 
                 </LinearLayout>
 
