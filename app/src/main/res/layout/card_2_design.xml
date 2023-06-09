@@ -16,16 +16,17 @@
             android:id="@+id/card2_image"
             android:layout_width="100dp"
             android:layout_height="150dp"
-            android:src="@drawable/article_baby"
-            android:scaleType="centerCrop"/>
+            android:src="@drawable/profil_image"
+            />
         <TextView
             android:id="@+id/card2_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Baby"
+            android:text="My profil"
             android:layout_toRightOf="@id/card2_image"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:textSize="20dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/baloo"
             android:textColor="@color/black"/>
 
@@ -35,10 +36,12 @@
             android:id="@+id/card2_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="fqsfqd"
+            android:text="View all profil data"
             android:layout_below="@id/card2_title"
             android:layout_toRightOf="@id/card2_image"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"/>
+
 
     </RelativeLayout>
 

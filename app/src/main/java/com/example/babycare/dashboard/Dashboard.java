@@ -40,7 +40,7 @@ public class Dashboard extends AppCompatActivity {
         //Hooks
         featuredRecycler = findViewById(R.id.featured_recycler);
 
-        featuredRecyclerMyProfil = findViewById(R.id.featured_recycler_my_profil);
+//        featuredRecyclerMyProfil = findViewById(R.id.featured_recycler_my_profil);
         featuredRecyclerCategories = findViewById(R.id.featured_recycler_categories);
 
 
@@ -68,8 +68,8 @@ public class Dashboard extends AppCompatActivity {
         featuredRecycler.setHasFixedSize(true);
         featuredRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        featuredRecyclerMyProfil.setHasFixedSize(true);
-        featuredRecyclerMyProfil.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+//        featuredRecyclerMyProfil.setHasFixedSize(true);
+//        featuredRecyclerMyProfil.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<FeaturedHelperClass> featuredLocations = new ArrayList<>();
         ArrayList<FeaturedHelperClass> featuredLocations2 = new ArrayList<>();
@@ -80,10 +80,10 @@ public class Dashboard extends AppCompatActivity {
         featuredLocations.add(new FeaturedHelperClass(R.drawable.article_lambda_baby, "Baby IQ", "Find out if your baby is intelligent"));
 
 
-        featuredLocations2.add(new FeaturedHelperClass(R.drawable.article_baby_alimentation, "How to feed your baby ?", "Discover what to give to your baby and what is the best for its heath."));
-        featuredLocations2.add(new FeaturedHelperClass(R.drawable.article_baby_sport, "Baby physical activity", "Doing your sport exercices while a baby is playing around can be quite chalenging."));
-        featuredLocations2.add(new FeaturedHelperClass(R.drawable.article_baby, "What does baby find funny ?", "Best jokes to tell to your baby to make him feel good"));
-        featuredLocations2.add(new FeaturedHelperClass(R.drawable.article_lambda_baby, "Baby IQ", "Find out if your baby is intelligent"));
+//        featuredLocations2.add(new FeaturedHelperClass(R.drawable.article_baby_alimentation, "How to feed your baby ?", "Discover what to give to your baby and what is the best for its heath."));
+//        featuredLocations2.add(new FeaturedHelperClass(R.drawable.article_baby_sport, "Baby physical activity", "Doing your sport exercices while a baby is playing around can be quite chalenging."));
+//        featuredLocations2.add(new FeaturedHelperClass(R.drawable.article_baby, "What does baby find funny ?", "Best jokes to tell to your baby to make him feel good"));
+//        featuredLocations2.add(new FeaturedHelperClass(R.drawable.article_lambda_baby, "Baby IQ", "Find out if your baby is intelligent"));
 
         adapter = new FeaturedAdapter(featuredLocations);
         featuredRecycler.setAdapter(adapter);
