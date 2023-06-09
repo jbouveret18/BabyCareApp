@@ -45,7 +45,7 @@
                     android:id="@+id/AppName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="A definir"
+                    android:text="BabyCare"
                     android:layout_centerHorizontal="true"
                     android:textSize="24sp"/>
 
@@ -278,7 +278,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Categories"
+                        android:text="My Profil"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         android:textAllCaps="true"/>
@@ -316,7 +316,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Most viewed locations"
+                        android:text="Categories"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         android:textAllCaps="true"/>

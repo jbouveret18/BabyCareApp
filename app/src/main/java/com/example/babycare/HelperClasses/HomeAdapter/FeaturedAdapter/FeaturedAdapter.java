@@ -1,10 +1,9 @@
-package com.example.babycare.HelperClasses.HomeAdapter;
+package com.example.babycare.HelperClasses.HomeAdapter.FeaturedAdapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +17,7 @@ import java.util.ArrayList;
 public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.FeaturedViewHolder> {
 
     ArrayList<FeaturedHelperClass> featuredLocations;
+    ArrayList<FeaturedHelperClass> featuredLocations2;
 
     public FeaturedAdapter(ArrayList<FeaturedHelperClass> featuredLocations) {
         this.featuredLocations = featuredLocations;
@@ -32,6 +32,8 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
         return featuredViewHolder;
     }
 
+
+
     @Override
     public void onBindViewHolder(@NonNull FeaturedViewHolder holder, int position) {
         FeaturedHelperClass featuredHelperClass = featuredLocations.get(position);
@@ -39,6 +41,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
         holder.image.setImageResource(featuredHelperClass.getImage());
         holder.title.setText(featuredHelperClass.getTitle());
         holder.desc.setText(featuredHelperClass.getDescription());
+
 
 
     }
@@ -62,11 +65,10 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
             title = itemView.findViewById(R.id.featured_title);
             desc = itemView.findViewById(R.id.featured_description);
 
-
-
-
         }
+
 
     }
 
 }
+

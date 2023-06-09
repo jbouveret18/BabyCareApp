@@ -97,7 +97,7 @@
             android:autofillHints=""
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:hint="@string/password"
+            android:hint="@string/password_confirmation"
             android:inputType="textVisiblePassword"
             tools:ignore="MissingConstraints,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 

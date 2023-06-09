@@ -1,4 +1,4 @@
-package com.example.babycare.HelperClasses.HomeAdapter;
+package com.example.babycare.HelperClasses.HomeAdapter.FeaturedAdapter;
 
 import android.graphics.drawable.Drawable;
 

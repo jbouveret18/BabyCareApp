@@ -28,5 +28,6 @@
     <string name="sign_in_with_apple_id">Sign in with Apple ID</string>
     <string name="sign_in_with_facebook_account">Sign in with Facebook account</string>
     <string name="password">Password :</string>
+    <string name="password_confirmation">Confirm password :</string>
     <string name="todo">TODO</string>
 </resources>
